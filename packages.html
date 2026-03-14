@@ -9,7 +9,6 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
-
 body{
 margin:0;
 padding:40px;
@@ -17,19 +16,16 @@ font-family:'Poppins',sans-serif;
 background:#0a0a0a;
 color:white;
 }
-
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
 }
-
 .logo{
 font-size:32px;
 font-weight:700;
 }
-
 .contact a{
 color:white;
 text-decoration:none;
@@ -38,23 +34,18 @@ display:flex;
 align-items:center;
 gap:8px;
 }
-
 .section-title{
 margin-top:50px;
 margin-bottom:20px;
 font-size:24px;
 font-weight:600;
 }
-
-/* grid package */
-
 .package-grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,200px);
 gap:25px;
 justify-content:center;
 }
-
 .box{
 width:200px;
 height:200px;
@@ -65,7 +56,16 @@ border:1px solid #222;
 cursor:pointer;
 transition:.35s;
 }
-
+.tall-box{
+width:200px;
+height:300px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
+}
 .banner-box{
 width:100%;
 height:150px;
@@ -77,23 +77,21 @@ cursor:pointer;
 transition:.35s;
 grid-column:span 2;
 }
-
 .box:hover,
+.tall-box:hover,
 .banner-box:hover{
 transform:translateY(-10px);
 border:1px solid #444;
 box-shadow:0 20px 30px rgba(0,0,0,.7);
 }
-
 .box img,
+.tall-box img,
 .banner-box img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
-
 /* zoom */
-
 #lightbox{
 position:fixed;
 top:0;
@@ -106,24 +104,19 @@ align-items:center;
 justify-content:center;
 z-index:999;
 }
-
 #lightbox img{
 max-width:90%;
 max-height:90%;
 }
-
 </style>
 </head>
-
 <body>
 
 <div class="header">
 <div class="logo">deklonio</div>
-
 <div class="contact">
 <a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-+201037011985
+<i class="fa-brands fa-whatsapp"></i> +201037011985
 </a>
 </div>
 </div>
@@ -131,100 +124,72 @@ max-height:90%;
 <!-- Package 1 -->
 <div class="section-title">Package 1</div>
 <div class="package-grid">
-
 <img class="box" src="p1_1.png">
 <img class="box" src="p1_2.png">
 <img class="box" src="p1_3.png">
 <img class="box" src="p1_4.png">
-<img class="box" src="p1_5.png">
-<img class="box" src="p1_6.png">
-
+<img class="tall-box" src="p1_5.png">
+<img class="tall-box" src="p1_6.png">
 <img class="banner-box" src="p1_banner.png">
-
 </div>
 
 <!-- Package 2 -->
 <div class="section-title">Package 2</div>
 <div class="package-grid">
-
 <img class="box" src="p2_1.png">
 <img class="box" src="p2_2.png">
 <img class="box" src="p2_3.png">
 <img class="box" src="p2_4.png">
-<img class="box" src="p2_5.png">
-<img class="box" src="p2_6.png">
-
 <img class="banner-box" src="p2_banner.png">
-
 </div>
 
 <!-- Package 3 -->
 <div class="section-title">Package 3</div>
 <div class="package-grid">
-
 <img class="box" src="p3_1.png">
 <img class="box" src="p3_2.png">
 <img class="box" src="p3_3.png">
 <img class="box" src="p3_4.png">
 <img class="box" src="p3_5.png">
-<img class="box" src="p3_6.png">
-
+<img class="banner-box" src="p3_6.png">
 <img class="banner-box" src="p3_banner.png">
-
 </div>
 
 <!-- Package 4 -->
 <div class="section-title">Package 4</div>
 <div class="package-grid">
-
 <img class="box" src="p4_1.png">
 <img class="box" src="p4_2.png">
 <img class="box" src="p4_3.png">
-<img class="box" src="p4_4.png">
-<img class="box" src="p4_5.png">
-<img class="box" src="p4_6.png">
-
 <img class="banner-box" src="p4_banner.png">
-
 </div>
 
 <!-- Package 5 -->
 <div class="section-title">Package 5</div>
 <div class="package-grid">
-
 <img class="box" src="p5_1.png">
 <img class="box" src="p5_2.png">
 <img class="box" src="p5_3.png">
-<img class="box" src="p5_4.png">
-<img class="box" src="p5_5.png">
-<img class="box" src="p5_6.png">
-
 <img class="banner-box" src="p5_banner.png">
-
 </div>
 
 <!-- zoom -->
-
 <div id="lightbox">
 <img src="">
 </div>
 
 <script>
-
 const lightbox = document.getElementById("lightbox")
 const lightImg = lightbox.querySelector("img")
-
 document.querySelectorAll("img").forEach(img=>{
 img.onclick = ()=>{
 lightbox.style.display = "flex"
 lightImg.src = img.src
 }
 })
-
 lightbox.onclick = ()=>{
 lightbox.style.display = "none"
 }
-
 </script>
 
 </body>
