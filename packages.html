@@ -76,11 +76,22 @@ box-shadow:0 10px 20px rgba(56,189,248,.4);
 }
 
 /* ===== Grid المربعات ===== */
+.package-container{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:50px; /* مسافة بين كل Package */
+}
+.package-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:15px;
+color:#38bdf8;
+}
 .package-grid{
 display:grid;
 grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
 gap:25px;
-margin-top:20px;
 justify-items:center;
 }
 .box{
@@ -166,9 +177,11 @@ max-height:90%;
 
 <a href="index.html" class="back-btn">Back</a>
 
-<!-- Packages -->
-<div class="package-grid">
+<div class="package-container">
+
 <!-- Package 1 -->
+<div class="package-title">Package 1</div>
+<div class="package-grid">
 <div class="box"><img src="p1_1.png" alt=""></div>
 <div class="box"><img src="p1_2.png" alt=""></div>
 <div class="box"><img src="p1_3.png" alt=""></div>
@@ -176,15 +189,21 @@ max-height:90%;
 <div class="tall-box"><img src="p1_5.png" alt=""></div>
 <div class="tall-box"><img src="p1_6.png" alt=""></div>
 <div class="banner-box"><img src="p1_banner.png" alt=""></div>
+</div>
 
 <!-- Package 2 -->
+<div class="package-title">Package 2</div>
+<div class="package-grid">
 <div class="box"><img src="p2_1.png" alt=""></div>
 <div class="box"><img src="p2_2.png" alt=""></div>
 <div class="box"><img src="p2_3.png" alt=""></div>
 <div class="box"><img src="p2_4.png" alt=""></div>
 <div class="banner-box"><img src="p2_banner.png" alt=""></div>
+</div>
 
 <!-- Package 3 -->
+<div class="package-title">Package 3</div>
+<div class="package-grid">
 <div class="box"><img src="p3_1.png" alt=""></div>
 <div class="box"><img src="p3_2.png" alt=""></div>
 <div class="box"><img src="p3_3.png" alt=""></div>
@@ -192,18 +211,26 @@ max-height:90%;
 <div class="box"><img src="p3_5.png" alt=""></div>
 <div class="tall-box"><img src="p3_6.png" alt=""></div>
 <div class="banner-box"><img src="p3_banner.png" alt=""></div>
+</div>
 
 <!-- Package 4 -->
+<div class="package-title">Package 4</div>
+<div class="package-grid">
 <div class="box"><img src="p4_1.png" alt=""></div>
 <div class="box"><img src="p4_2.png" alt=""></div>
 <div class="box"><img src="p4_3.png" alt=""></div>
 <div class="banner-box"><img src="p4_banner.png" alt=""></div>
+</div>
 
 <!-- Package 5 -->
+<div class="package-title">Package 5</div>
+<div class="package-grid">
 <div class="box"><img src="p5_1.png" alt=""></div>
 <div class="box"><img src="p5_2.png" alt=""></div>
 <div class="box"><img src="p5_3.png" alt=""></div>
 <div class="banner-box"><img src="p5_banner.png" alt=""></div>
+</div>
+
 </div>
 
 <!-- zoom -->
