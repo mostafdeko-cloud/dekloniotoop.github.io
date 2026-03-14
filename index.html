@@ -12,13 +12,16 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
 .logo{font-size:32px;font-weight:700;}
 .contact a{color:white;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;}
 .contact a i{color:white;}
+.section-title{margin-top:40px;margin-bottom:15px;font-size:24px;font-weight:600;}
 .menu{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:30px;}
 .menu a{text-decoration:none;color:white;padding:10px 25px;border-radius:25px;background:#00bfff;transition:.3s;}
 .menu a:hover{transform:translateY(-4px);opacity:.8;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;margin-top:20px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;}
+.banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;justify-content:center;}
 .box{width:200px;height:200px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
-.box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
-.box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
+.banner-box{width:100%;height:150px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
+.box:hover,.banner-box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
+.box img,.banner-box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
 #lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:999;}
 #lightbox img{max-width:90%;max-height:90%;object-fit:contain;cursor:zoom-out;transition: transform .3s ease;}
 </style>
@@ -34,12 +37,14 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
 
 <div class="menu">
   <a href="#logos">Logos</a>
-  <a href="banners.html">Banners</a>
-  <a href="packages.html">Packages</a>
-  <a href="prices.html">Price Lists</a>
+  <a href="#banners">Banners</a>
+  <a href="#packages">Packages</a>
+  <a href="#prices">Price Lists</a>
 </div>
 
-<div class="grid" id="logo-grid">
+<!-- Logos -->
+<div id="logos" class="section-title">Logos</div>
+<div class="grid">
   <div class="box"><img src="logo1.png" loading="lazy"></div>
   <div class="box"><img src="logo2.png" loading="lazy"></div>
   <div class="box"><img src="logo3.png" loading="lazy"></div>
@@ -52,12 +57,57 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <div class="box"><img src="logo10.png" loading="lazy"></div>
 </div>
 
+<!-- Banners -->
+<div id="banners" class="section-title">Banners</div>
+<div class="banner-grid">
+  <div class="banner-box"><img src="banner1.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner2.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner3.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner4.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner5.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner6.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner7.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner8.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner9.png" loading="lazy"></div>
+  <div class="banner-box"><img src="banner10.png" loading="lazy"></div>
+</div>
+
+<!-- Packages -->
+<div id="packages" class="section-title">Packages</div>
+<div class="grid">
+  <div class="box"><img src="package1.png" loading="lazy"></div>
+  <div class="box"><img src="package2.png" loading="lazy"></div>
+  <div class="box"><img src="package3.png" loading="lazy"></div>
+  <div class="box"><img src="package4.png" loading="lazy"></div>
+  <div class="box"><img src="package5.png" loading="lazy"></div>
+  <div class="box"><img src="package6.png" loading="lazy"></div>
+  <div class="box"><img src="package7.png" loading="lazy"></div>
+  <div class="box"><img src="package8.png" loading="lazy"></div>
+  <div class="box"><img src="package9.png" loading="lazy"></div>
+  <div class="box"><img src="package10.png" loading="lazy"></div>
+</div>
+
+<!-- Price Lists -->
+<div id="prices" class="section-title">Price Lists</div>
+<div class="grid">
+  <div class="box"><img src="price1.png" loading="lazy"></div>
+  <div class="box"><img src="price2.png" loading="lazy"></div>
+  <div class="box"><img src="price3.png" loading="lazy"></div>
+  <div class="box"><img src="price4.png" loading="lazy"></div>
+  <div class="box"><img src="price5.png" loading="lazy"></div>
+  <div class="box"><img src="price6.png" loading="lazy"></div>
+  <div class="box"><img src="price7.png" loading="lazy"></div>
+  <div class="box"><img src="price8.png" loading="lazy"></div>
+  <div class="box"><img src="price9.png" loading="lazy"></div>
+  <div class="box"><img src="price10.png" loading="lazy"></div>
+</div>
+
 <div id="lightbox"><img src="" alt=""></div>
 
 <script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
-document.querySelectorAll('.box img').forEach(img=>{
+document.querySelectorAll('img').forEach(img=>{
   img.addEventListener('click', ()=>{
     lightbox.style.display='flex';
     lightboxImg.src = img.src;
