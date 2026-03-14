@@ -21,6 +21,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
+flex-wrap:wrap;
 }
 .logo-section{
 display:flex;
@@ -47,11 +48,13 @@ font-weight:600;
 display:flex;
 align-items:center;
 gap:8px;
+margin-top:10px;
 }
 .buttons{
 display:flex;
 gap:15px;
 margin-top:30px;
+flex-wrap:wrap;
 }
 .btn{
 padding:10px 25px;
@@ -73,7 +76,7 @@ box-shadow:0 10px 20px rgba(56,189,248,.4);
 display:grid;
 grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
 gap:25px;
-margin-top:40px;
+margin-top:20px;
 justify-items:center;
 }
 .box{
@@ -86,16 +89,42 @@ border:1px solid #222;
 cursor:pointer;
 transition:.35s;
 }
-.box:hover{
+.tall-box{
+width:200px;
+height:300px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
+}
+.banner-box{
+width:100%;
+height:220px; 
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
+grid-column:span 2; 
+}
+.box:hover,
+.tall-box:hover,
+.banner-box:hover{
 transform:translateY(-10px);
 border:1px solid #444;
 box-shadow:0 20px 30px rgba(0,0,0,.7);
 }
-.box img{
+.box img,
+.tall-box img,
+.banner-box img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
+
 /* zoom */
 #lightbox{
 position:fixed;
@@ -133,13 +162,14 @@ max-height:90%;
 
 <!-- Buttons for categories -->
 <div class="buttons">
-<a href="#" class="btn">Logos</a>
-<a href="#" class="btn">Banners</a>
-<a href="#" class="btn">Packages</a>
-<a href="#" class="btn">Price lists</a>
+<a href="#logos" class="btn">Logos</a>
+<a href="#banners" class="btn">Banners</a>
+<a href="packages.html" class="btn">Packages</a>
+<a href="#prices" class="btn">Price lists</a>
 </div>
 
-<!-- Logos grid -->
+<!-- Logos -->
+<div id="logos" class="section-title">Logos</div>
 <div class="package-grid">
 <div class="box"><img src="logo1.png" alt=""></div>
 <div class="box"><img src="logo2.png" alt=""></div>
@@ -151,6 +181,26 @@ max-height:90%;
 <div class="box"><img src="logo8.png" alt=""></div>
 <div class="box"><img src="logo9.png" alt=""></div>
 <div class="box"><img src="logo10.png" alt=""></div>
+</div>
+
+<!-- Banners -->
+<div id="banners" class="section-title">Banners</div>
+<div class="package-grid">
+<div class="banner-box"><img src="banner1.png" alt=""></div>
+<div class="banner-box"><img src="banner2.png" alt=""></div>
+<div class="banner-box"><img src="banner3.png" alt=""></div>
+<div class="banner-box"><img src="banner4.png" alt=""></div>
+<div class="banner-box"><img src="banner5.png" alt=""></div>
+</div>
+
+<!-- Price lists -->
+<div id="prices" class="section-title">Price Lists</div>
+<div class="package-grid">
+<div class="box"><img src="price1.png" alt=""></div>
+<div class="box"><img src="price2.png" alt=""></div>
+<div class="box"><img src="price3.png" alt=""></div>
+<div class="box"><img src="price4.png" alt=""></div>
+<div class="box"><img src="price5.png" alt=""></div>
 </div>
 
 <!-- zoom -->
