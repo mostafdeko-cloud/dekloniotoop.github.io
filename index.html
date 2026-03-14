@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+[12:08 am, 15/03/2026] idarw1n: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packages - deklonio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+body{
+margin:0;
+padding:40px;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
+color:white;
+}
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+.logo{
+font-size:32px;
+font-weight:700;
+}
+.contact a{
+color:white;
+text-decoration:none;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:8px;
+}
+.section-title{
+margin-top:50px;
+margin-bot…
+[12:11 am, 15/03/2026] idarw1n: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +48,6 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
-
 body{
 margin:0;
 padding:40px;
@@ -17,22 +55,30 @@ font-family:'Poppins',sans-serif;
 background:#0a0a0a;
 color:white;
 }
-
-/* header */
-
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
 }
-
+.logo-section{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
 .logo{
 font-size:32px;
 font-weight:700;
-letter-spacing:1px;
 }
-
+.sub-logo{
+font-size:20px;
+color:#38bdf8;
+font-weight:500;
+}
+.tagline{
+font-size:16px;
+color:#a1a1aa;
+}
 .contact a{
 color:white;
 text-decoration:none;
@@ -40,60 +86,34 @@ font-weight:600;
 display:flex;
 align-items:center;
 gap:8px;
-font-size:15px;
 }
-
-/* menu */
-
-.menu{
+.buttons{
 display:flex;
 gap:15px;
-flex-wrap:wrap;
-margin-bottom:35px;
+margin-top:30px;
 }
-
-.menu a{
+.btn{
+padding:10px 25px;
+border-radius:30px;
 text-decoration:none;
-color:white;
-padding:10px 26px;
-border-radius:25px;
-background:#00bfff;
-transition:.3s;
-font-size:14px;
-}
-
-.menu a:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 20px rgba(0,191,255,.4);
-}
-
-/* sections */
-
-.section-title{
-margin-top:45px;
-margin-bottom:18px;
-font-size:24px;
 font-weight:600;
-letter-spacing:.5px;
+font-size:14px;
+transition:all .35s ease;
+background:#38bdf8;
+color:white;
 }
-
-/* grids */
-
-.grid{
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(56,189,248,.4);
+}
+/* Boxes grid */
+.package-grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,200px);
 gap:25px;
+margin-top:40px;
 justify-content:center;
 }
-
-.banner-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:25px;
-}
-
-/* boxes */
-
 .box{
 width:200px;
 height:200px;
@@ -101,36 +121,20 @@ background:#151515;
 border-radius:16px;
 overflow:hidden;
 border:1px solid #222;
-transition:.35s;
 cursor:pointer;
-}
-
-.banner-box{
-height:150px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
 transition:.35s;
-cursor:pointer;
 }
-
-.box:hover,
-.banner-box:hover{
+.box:hover{
 transform:translateY(-10px);
 border:1px solid #444;
 box-shadow:0 20px 30px rgba(0,0,0,.7);
 }
-
-.box img,
-.banner-box img{
+.box img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
-
 /* zoom */
-
 #lightbox{
 position:fixed;
 top:0;
@@ -143,112 +147,68 @@ align-items:center;
 justify-content:center;
 z-index:999;
 }
-
 #lightbox img{
 max-width:90%;
 max-height:90%;
 }
-
 </style>
 </head>
-
 <body>
 
-<!-- header -->
-
 <div class="header">
-
+<div class="logo-section">
 <div class="logo">deklonio</div>
+<div class="sub-logo">website</div>
+<div class="tagline">The best designer</div>
+</div>
 
 <div class="contact">
 <a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-+201037011985
+<i class="fa-brands fa-whatsapp"></i> +201037011985
 </a>
 </div>
-
 </div>
 
-<!-- menu -->
-
-<div class="menu">
-<a href="#logos">Logos</a>
-<a href="#banners">Banners</a>
-<a href="#prices">Price Lists</a>
-<a href="packages.html">Packages</a>
+<!-- Buttons for categories -->
+<div class="buttons">
+<a href="#" class="btn">Logos</a>
+<a href="#" class="btn">Banners</a>
+<a href="#" class="btn">Packages</a>
+<a href="#" class="btn">Price lists</a>
 </div>
 
-<!-- logos -->
-
-<div id="logos" class="section-title">Logos</div>
-
-<div class="grid">
-
-<img class="box" src="logo1.png">
-<img class="box" src="logo2.png">
-<img class="box" src="logo3.png">
-<img class="box" src="logo4.png">
-<img class="box" src="logo5.png">
-<img class="box" src="logo6.png">
-<img class="box" src="logo7.png">
-<img class="box" src="logo8.png">
-<img class="box" src="logo9.png">
-<img class="box" src="logo10.png">
-<img class="box" src="logo11.png">
-<img class="box" src="logo12.png">
-
-</div>
-
-<!-- banners -->
-
-<div id="banners" class="section-title">Banners</div>
-
-<div class="banner-grid">
-
-<img class="banner-box" src="banner1.png">
-<img class="banner-box" src="banner2.png">
-<img class="banner-box" src="banner3.png">
-<img class="banner-box" src="banner4.png">
-<img class="banner-box" src="banner5.png">
-
-</div>
-
-<!-- price lists -->
-
-<div id="prices" class="section-title">Price Lists</div>
-
-<div class="grid">
-
-<img class="box" src="price1.png">
-<img class="box" src="price2.png">
-<img class="box" src="price3.png">
-<img class="box" src="price4.png">
-<img class="box" src="price5.png">
-
+<!-- Logos grid placeholder -->
+<div class="package-grid">
+<!-- مثال للصورة -->
+<div class="box"><img src="logo1.png"></div>
+<div class="box"><img src="logo2.png"></div>
+<div class="box"><img src="logo3.png"></div>
+<div class="box"><img src="logo4.png"></div>
+<div class="box"><img src="logo5.png"></div>
+<div class="box"><img src="logo6.png"></div>
+<div class="box"><img src="logo7.png"></div>
+<div class="box"><img src="logo8.png"></div>
+<div class="box"><img src="logo9.png"></div>
+<div class="box"><img src="logo10.png"></div>
 </div>
 
 <!-- zoom -->
-
 <div id="lightbox">
 <img src="">
 </div>
 
 <script>
-
 const lightbox = document.getElementById("lightbox")
 const lightImg = lightbox.querySelector("img")
-
-document.querySelectorAll("img").forEach(img=>{
+document.querySelectorAll(".package-grid img").forEach(img=>{
 img.onclick = ()=>{
 lightbox.style.display = "flex"
 lightImg.src = img.src
 }
 })
-
 lightbox.onclick = ()=>{
 lightbox.style.display = "none"
 }
-
 </script>
 
 </body>
