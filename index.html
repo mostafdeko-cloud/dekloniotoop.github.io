@@ -4,152 +4,251 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>deklonio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 <style>
+
 body{
-  margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;
+margin:0;
+padding:40px;
+font-family:'Poppins',sans-serif;
+background:#0a0a0a;
+color:white;
 }
+
+/* header */
+
 .header{
-  display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
 }
-.logo{font-size:32px;font-weight:700;}
-.contact a{color:white;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;}
-.contact a i{color:white;}
-.section-title{margin-top:40px;margin-bottom:15px;font-size:24px;font-weight:600;}
-.menu{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:30px;}
-.menu a{text-decoration:none;color:white;padding:10px 25px;border-radius:25px;background:#00bfff;transition:.3s;}
-.menu a:hover{transform:translateY(-4px);opacity:.8;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;}
-.banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;justify-content:center;}
-.box{width:200px;height:auto;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;padding:10px;}
-.banner-box{width:100%;height:150px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
-.box:hover,.banner-box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
-.box img,.banner-box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
-.package-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+
+.logo{
+font-size:32px;
+font-weight:700;
+letter-spacing:1px;
 }
-.package-grid img{
-  width:100%;
-  height:100px;
-  object-fit:cover;
-  cursor:pointer;
-  transition: transform .3s ease;
+
+.contact a{
+color:white;
+text-decoration:none;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:8px;
+font-size:15px;
 }
-.package-grid img:hover{
-  transform:scale(1.05);
+
+/* menu */
+
+.menu{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:35px;
 }
-#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:999;}
-#lightbox img{max-width:90%;max-height:90%;object-fit:contain;cursor:zoom-out;transition: transform .3s ease;}
+
+.menu a{
+text-decoration:none;
+color:white;
+padding:10px 26px;
+border-radius:25px;
+background:#00bfff;
+transition:.3s;
+font-size:14px;
+}
+
+.menu a:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,191,255,.4);
+}
+
+/* sections */
+
+.section-title{
+margin-top:45px;
+margin-bottom:18px;
+font-size:24px;
+font-weight:600;
+letter-spacing:.5px;
+}
+
+/* grids */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,200px);
+gap:25px;
+justify-content:center;
+}
+
+.banner-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+gap:25px;
+}
+
+/* boxes */
+
+.box{
+width:200px;
+height:200px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+transition:.35s;
+cursor:pointer;
+}
+
+.banner-box{
+height:150px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+transition:.35s;
+cursor:pointer;
+}
+
+.box:hover,
+.banner-box:hover{
+transform:translateY(-10px);
+border:1px solid #444;
+box-shadow:0 20px 30px rgba(0,0,0,.7);
+}
+
+.box img,
+.banner-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* zoom */
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.96);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
 </style>
 </head>
+
 <body>
 
+<!-- header -->
+
 <div class="header">
-  <div class="logo">deklonio</div>
-  <div class="contact">
-    <a href="https://wa.me/201037011985" target="_blank"><i class="fa-brands fa-whatsapp"></i> +201037011985</a>
-  </div>
+
+<div class="logo">deklonio</div>
+
+<div class="contact">
+<a href="https://wa.me/201037011985" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
++201037011985
+</a>
 </div>
+
+</div>
+
+<!-- menu -->
 
 <div class="menu">
-  <a href="#logos">Logos</a>
-  <a href="#banners">Banners</a>
-  <a href="#packages">Packages</a>
-  <a href="#prices">Price Lists</a>
+<a href="#logos">Logos</a>
+<a href="#banners">Banners</a>
+<a href="#prices">Price Lists</a>
+<a href="packages.html">Packages</a>
 </div>
 
-<!-- Logos 12 خانة -->
+<!-- logos -->
+
 <div id="logos" class="section-title">Logos</div>
-<div class="grid" id="logos-grid">
-  <!-- الصور يتم وضعها يدويًا أو ممكن نضيف ديناميكي -->
+
+<div class="grid">
+
+<img class="box" src="logo1.png">
+<img class="box" src="logo2.png">
+<img class="box" src="logo3.png">
+<img class="box" src="logo4.png">
+<img class="box" src="logo5.png">
+<img class="box" src="logo6.png">
+<img class="box" src="logo7.png">
+<img class="box" src="logo8.png">
+<img class="box" src="logo9.png">
+<img class="box" src="logo10.png">
+<img class="box" src="logo11.png">
+<img class="box" src="logo12.png">
+
 </div>
 
-<!-- Banners 5 خانة -->
+<!-- banners -->
+
 <div id="banners" class="section-title">Banners</div>
-<div class="banner-grid" id="banners-grid">
-  <!-- الصور يتم وضعها يدويًا أو ديناميكي -->
+
+<div class="banner-grid">
+
+<img class="banner-box" src="banner1.png">
+<img class="banner-box" src="banner2.png">
+<img class="banner-box" src="banner3.png">
+<img class="banner-box" src="banner4.png">
+<img class="banner-box" src="banner5.png">
+
 </div>
 
-<!-- Packages -->
-<div id="packages" class="section-title">Packages</div>
-<div class="grid" id="packages-grid">
-  <!-- الصور يتم إضافتها تلقائيًا من فولدر packages -->
-</div>
+<!-- price lists -->
 
-<!-- Price Lists 5 خانة -->
 <div id="prices" class="section-title">Price Lists</div>
-<div class="grid" id="prices-grid">
-  <!-- الصور يتم وضعها يدويًا -->
+
+<div class="grid">
+
+<img class="box" src="price1.png">
+<img class="box" src="price2.png">
+<img class="box" src="price3.png">
+<img class="box" src="price4.png">
+<img class="box" src="price5.png">
+
 </div>
 
-<!-- Lightbox Zoom Fullscreen -->
-<div id="lightbox"><img src="" alt=""></div>
+<!-- zoom -->
+
+<div id="lightbox">
+<img src="">
+</div>
 
 <script>
-// الصور الأساسية (لو عايز تضيفهم ديناميكي من array)
-const logos = ['logo1.png','logo2.png','logo3.png','logo4.png','logo5.png','logo6.png','logo7.png','logo8.png','logo9.png','logo10.png','logo11.png','logo12.png'];
-const banners = ['banner1.png','banner2.png','banner3.png','banner4.png','banner5.png'];
-const prices = ['price1.png','price2.png','price3.png','price4.png','price5.png'];
 
-// إضافة الصور للصفحة
-function addImages(gridId, images, boxClass='box'){
-  const grid=document.getElementById(gridId);
-  images.forEach(img=>{
-    const div=document.createElement('div');
-    div.className=boxClass;
-    const image=document.createElement('img');
-    image.src=img;
-    image.loading='lazy';
-    div.appendChild(image);
-    grid.appendChild(div);
-  });
+const lightbox = document.getElementById("lightbox")
+const lightImg = lightbox.querySelector("img")
+
+document.querySelectorAll("img").forEach(img=>{
+img.onclick = ()=>{
+lightbox.style.display = "flex"
+lightImg.src = img.src
 }
-addImages('logos-grid',logos);
-addImages('banners-grid',banners,'banner-box');
-addImages('prices-grid',prices);
+})
 
-// === Packages ديناميكي ===
-// هنا الفكرة: كل صورة جديدة تحطها في فولدر packages/ ويتم إضافتها تلقائيًا
-// *ملاحظة:* JavaScript في المتصفح لا يستطيع قراءة فولدرات النظام مباشرة، لذلك لازم تحط اسم كل صورة في Array
-// مثال جاهز: كل Package مجموعة صور
-const packagesData=[
-  ['packages/package1_logo.png','packages/package1_banner.png','packages/package1_sticker1.png','packages/package1_sticker2.png'],
-  ['packages/package2_logo.png','packages/package2_banner.png','packages/package2_sticker1.png','packages/package2_sticker2.png'],
-  ['packages/package3_logo.png','packages/package3_banner.png','packages/package3_sticker1.png','packages/package3_sticker2.png']
-];
+lightbox.onclick = ()=>{
+lightbox.style.display = "none"
+}
 
-const packagesGrid=document.getElementById('packages-grid');
-packagesData.forEach(pkg=>{
-  const box=document.createElement('div');
-  box.className='box package';
-  const pkgGrid=document.createElement('div');
-  pkgGrid.className='package-grid';
-  pkg.forEach(img=>{
-    const image=document.createElement('img');
-    image.src=img;
-    image.loading='lazy';
-    pkgGrid.appendChild(image);
-  });
-  box.appendChild(pkgGrid);
-  packagesGrid.appendChild(box);
-});
-
-// === Lightbox Zoom ===
-const lightbox=document.getElementById('lightbox');
-const lightboxImg=lightbox.querySelector('img');
-document.querySelectorAll('img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    lightbox.style.display='flex';
-    lightboxImg.src=img.src;
-  });
-});
-lightbox.addEventListener('click',()=>{
-  lightbox.style.display='none';
-  lightboxImg.src='';
-});
 </script>
 
 </body>
