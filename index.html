@@ -22,10 +22,25 @@ body{
 .menu a:hover{transform:translateY(-4px);opacity:.8;}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;}
 .banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;justify-content:center;}
-.box{width:200px;height:200px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
+.box{width:200px;height:auto;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;padding:10px;}
 .banner-box{width:100%;height:150px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
 .box:hover,.banner-box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
 .box img,.banner-box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.package-grid img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+  cursor:pointer;
+  transition: transform .3s ease;
+}
+.package-grid img:hover{
+  transform:scale(1.05);
+}
 #lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:999;}
 #lightbox img{max-width:90%;max-height:90%;object-fit:contain;cursor:zoom-out;transition: transform .3s ease;}
 </style>
@@ -48,59 +63,81 @@ body{
 
 <!-- Logos 12 خانة -->
 <div id="logos" class="section-title">Logos</div>
-<div class="grid">
-  <div class="box"><img src="logo1.png" loading="lazy"></div>
-  <div class="box"><img src="logo2.png" loading="lazy"></div>
-  <div class="box"><img src="logo3.png" loading="lazy"></div>
-  <div class="box"><img src="logo4.png" loading="lazy"></div>
-  <div class="box"><img src="logo5.png" loading="lazy"></div>
-  <div class="box"><img src="logo6.png" loading="lazy"></div>
-  <div class="box"><img src="logo7.png" loading="lazy"></div>
-  <div class="box"><img src="logo8.png" loading="lazy"></div>
-  <div class="box"><img src="logo9.png" loading="lazy"></div>
-  <div class="box"><img src="logo10.png" loading="lazy"></div>
-  <div class="box"><img src="logo11.png" loading="lazy"></div>
-  <div class="box"><img src="logo12.png" loading="lazy"></div>
+<div class="grid" id="logos-grid">
+  <!-- الصور يتم وضعها يدويًا أو ممكن نضيف ديناميكي -->
 </div>
 
 <!-- Banners 5 خانة -->
 <div id="banners" class="section-title">Banners</div>
-<div class="banner-grid">
-  <div class="banner-box"><img src="banner1.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner2.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner3.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner4.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner5.png" loading="lazy"></div>
+<div class="banner-grid" id="banners-grid">
+  <!-- الصور يتم وضعها يدويًا أو ديناميكي -->
 </div>
 
-<!-- Packages 10 خانة -->
+<!-- Packages -->
 <div id="packages" class="section-title">Packages</div>
-<div class="grid">
-  <div class="box"><img src="package1.png" loading="lazy"></div>
-  <div class="box"><img src="package2.png" loading="lazy"></div>
-  <div class="box"><img src="package3.png" loading="lazy"></div>
-  <div class="box"><img src="package4.png" loading="lazy"></div>
-  <div class="box"><img src="package5.png" loading="lazy"></div>
-  <div class="box"><img src="package6.png" loading="lazy"></div>
-  <div class="box"><img src="package7.png" loading="lazy"></div>
-  <div class="box"><img src="package8.png" loading="lazy"></div>
-  <div class="box"><img src="package9.png" loading="lazy"></div>
-  <div class="box"><img src="package10.png" loading="lazy"></div>
+<div class="grid" id="packages-grid">
+  <!-- الصور يتم إضافتها تلقائيًا من فولدر packages -->
 </div>
 
 <!-- Price Lists 5 خانة -->
 <div id="prices" class="section-title">Price Lists</div>
-<div class="grid">
-  <div class="box"><img src="price1.png" loading="lazy"></div>
-  <div class="box"><img src="price2.png" loading="lazy"></div>
-  <div class="box"><img src="price3.png" loading="lazy"></div>
-  <div class="box"><img src="price4.png" loading="lazy"></div>
-  <div class="box"><img src="price5.png" loading="lazy"></div>
+<div class="grid" id="prices-grid">
+  <!-- الصور يتم وضعها يدويًا -->
 </div>
 
 <!-- Lightbox Zoom Fullscreen -->
 <div id="lightbox"><img src="" alt=""></div>
+
 <script>
+// الصور الأساسية (لو عايز تضيفهم ديناميكي من array)
+const logos = ['logo1.png','logo2.png','logo3.png','logo4.png','logo5.png','logo6.png','logo7.png','logo8.png','logo9.png','logo10.png','logo11.png','logo12.png'];
+const banners = ['banner1.png','banner2.png','banner3.png','banner4.png','banner5.png'];
+const prices = ['price1.png','price2.png','price3.png','price4.png','price5.png'];
+
+// إضافة الصور للصفحة
+function addImages(gridId, images, boxClass='box'){
+  const grid=document.getElementById(gridId);
+  images.forEach(img=>{
+    const div=document.createElement('div');
+    div.className=boxClass;
+    const image=document.createElement('img');
+    image.src=img;
+    image.loading='lazy';
+    div.appendChild(image);
+    grid.appendChild(div);
+  });
+}
+addImages('logos-grid',logos);
+addImages('banners-grid',banners,'banner-box');
+addImages('prices-grid',prices);
+
+// === Packages ديناميكي ===
+// هنا الفكرة: كل صورة جديدة تحطها في فولدر packages/ ويتم إضافتها تلقائيًا
+// *ملاحظة:* JavaScript في المتصفح لا يستطيع قراءة فولدرات النظام مباشرة، لذلك لازم تحط اسم كل صورة في Array
+// مثال جاهز: كل Package مجموعة صور
+const packagesData=[
+  ['packages/package1_logo.png','packages/package1_banner.png','packages/package1_sticker1.png','packages/package1_sticker2.png'],
+  ['packages/package2_logo.png','packages/package2_banner.png','packages/package2_sticker1.png','packages/package2_sticker2.png'],
+  ['packages/package3_logo.png','packages/package3_banner.png','packages/package3_sticker1.png','packages/package3_sticker2.png']
+];
+
+const packagesGrid=document.getElementById('packages-grid');
+packagesData.forEach(pkg=>{
+  const box=document.createElement('div');
+  box.className='box package';
+  const pkgGrid=document.createElement('div');
+  pkgGrid.className='package-grid';
+  pkg.forEach(img=>{
+    const image=document.createElement('img');
+    image.src=img;
+    image.loading='lazy';
+    pkgGrid.appendChild(image);
+  });
+  box.appendChild(pkgGrid);
+  packagesGrid.appendChild(box);
+});
+
+// === Lightbox Zoom ===
 const lightbox=document.getElementById('lightbox');
 const lightboxImg=lightbox.querySelector('img');
 document.querySelectorAll('img').forEach(img=>{
