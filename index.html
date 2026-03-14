@@ -4,44 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>deklonio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;padding:40px;}
-
-/* header */
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:50px;}
-.logo{font-size:32px;font-weight:700;letter-spacing:2px;}
+body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+.logo{font-size:32px;font-weight:700;}
 .contact a{color:white;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;}
 .contact a i{color:white;}
-
-/* menu */
-.menu{display:flex;gap:20px;margin-bottom:60px;flex-wrap:wrap;}
-.menu a{text-decoration:none;color:white;padding:8px 20px;border-radius:25px;background:#00bfff;font-size:14px;transition:.3s;}
+.menu{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:30px;}
+.menu a{text-decoration:none;color:white;padding:10px 25px;border-radius:25px;background:#00bfff;transition:.3s;}
 .menu a:hover{transform:translateY(-4px);opacity:.8;}
-
-/* sections */
-.section{margin-bottom:80px;}
-.section h2{margin-bottom:30px;font-size:28px;}
-
-/* grid for logos and packages */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;}
-
-/* boxes */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;margin-top:20px;}
 .box{width:200px;height:200px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
 .box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
 .box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
-
-/* banners */
-.banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;}
-.banner-box{width:100%;height:150px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
-.banner-box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
-.banner-box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
-
-/* ==== Fullscreen zoom ==== */
 #lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:999;}
 #lightbox img{max-width:90%;max-height:90%;object-fit:contain;cursor:zoom-out;transition: transform .3s ease;}
 </style>
@@ -49,107 +26,43 @@ body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;padding:40p
 <body>
 
 <div class="header">
-<div class="logo">deklonio</div>
-<div class="contact">
-<a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> +201037011985
-</a>
-</div>
+  <div class="logo">deklonio</div>
+  <div class="contact">
+    <a href="https://wa.me/201037011985" target="_blank"><i class="fa-brands fa-whatsapp"></i> +201037011985</a>
+  </div>
 </div>
 
 <div class="menu">
-<a href="#logos">Logos</a>
-<a href="#banners">Banners</a>
-<a href="#packages">Packages</a>
-<a href="#prices">Price Lists</a>
+  <a href="#logos">Logos</a>
+  <a href="banners.html">Banners</a>
+  <a href="packages.html">Packages</a>
+  <a href="prices.html">Price Lists</a>
 </div>
 
-<!-- Logos -->
-<div class="section" id="logos">
-<h2>Logos</h2>
 <div class="grid" id="logo-grid">
-<!-- الصور هتتحمل هنا تلقائي -->
-<div class="box"><img src="logo1.png"></div>
-<div class="box"><img src="logo2.png"></div>
-<div class="box"><img src="logo3.png"></div>
-<div class="box"><img src="logo4.png"></div>
-<div class="box"><img src="logo5.png"></div>
-<div class="box"><img src="logo6.png"></div>
-<div class="box"><img src="logo7.png"></div>
-<div class="box"><img src="logo8.png"></div>
-<div class="box"><img src="logo9.png"></div>
-<div class="box"><img src="logo10.png"></div>
-</div>
+  <div class="box"><img src="logo1.png" loading="lazy"></div>
+  <div class="box"><img src="logo2.png" loading="lazy"></div>
+  <div class="box"><img src="logo3.png" loading="lazy"></div>
+  <div class="box"><img src="logo4.png" loading="lazy"></div>
+  <div class="box"><img src="logo5.png" loading="lazy"></div>
+  <div class="box"><img src="logo6.png" loading="lazy"></div>
+  <div class="box"><img src="logo7.png" loading="lazy"></div>
+  <div class="box"><img src="logo8.png" loading="lazy"></div>
+  <div class="box"><img src="logo9.png" loading="lazy"></div>
+  <div class="box"><img src="logo10.png" loading="lazy"></div>
 </div>
 
-<!-- Banners -->
-<div class="section" id="banners">
-<h2>Banners</h2>
-<div class="banner-grid" id="banner-grid">
-<div class="banner-box"><img src="banner1.png"></div>
-<div class="banner-box"><img src="banner2.png"></div>
-<div class="banner-box"><img src="banner3.png"></div>
-<div class="banner-box"><img src="banner4.png"></div>
-<div class="banner-box"><img src="banner5.png"></div>
-<div class="banner-box"><img src="banner6.png"></div>
-<div class="banner-box"><img src="banner7.png"></div>
-<div class="banner-box"><img src="banner8.png"></div>
-<div class="banner-box"><img src="banner9.png"></div>
-<div class="banner-box"><img src="banner10.png"></div>
-</div>
-</div>
-
-<!-- Packages -->
-<div class="section" id="packages">
-<h2>Packages</h2>
-<div class="grid" id="package-grid">
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-</div>
-</div>
-
-<!-- Prices -->
-<div class="section" id="prices">
-<h2>Price Lists</h2>
-<div class="grid" id="price-grid">
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-</div>
-</div>
-
-<!-- Fullscreen zoom overlay -->
-<div id="lightbox">
-<img src="" alt="">
-</div>
+<div id="lightbox"><img src="" alt=""></div>
 
 <script>
-// Fullscreen zoom
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
-
-document.querySelectorAll('.box img, .banner-box img').forEach(img=>{
+document.querySelectorAll('.box img').forEach(img=>{
   img.addEventListener('click', ()=>{
     lightbox.style.display='flex';
     lightboxImg.src = img.src;
   });
 });
-
 lightbox.addEventListener('click', ()=>{
   lightbox.style.display='none';
   lightboxImg.src='';
