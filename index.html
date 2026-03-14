@@ -8,15 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 body{
@@ -27,7 +22,6 @@ padding:40px;
 }
 
 /* header */
-
 .header{
 display:flex;
 justify-content:space-between;
@@ -45,10 +39,12 @@ letter-spacing:2px;
 color:white;
 text-decoration:none;
 font-weight:600;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
 /* menu */
-
 .menu{
 display:flex;
 gap:20px;
@@ -72,7 +68,6 @@ opacity:.8;
 }
 
 /* sections */
-
 .section{
 margin-bottom:80px;
 }
@@ -82,8 +77,7 @@ margin-bottom:30px;
 font-size:28px;
 }
 
-/* grid */
-
+/* grid for logos and packages */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,200px);
@@ -91,8 +85,7 @@ gap:25px;
 justify-content:center;
 }
 
-/* مربعات */
-
+/* boxes */
 .box{
 width:200px;
 height:200px;
@@ -110,16 +103,14 @@ border:1px solid #555;
 box-shadow:0 15px 25px rgba(0,0,0,0.6);
 }
 
-/* صورة اللوجو */
-
 .box img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition: transform .3s ease;
 }
 
 /* banners */
-
 .banner-grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
@@ -134,6 +125,7 @@ border-radius:15px;
 overflow:hidden;
 border:1px solid #222;
 transition:.3s;
+cursor:pointer;
 }
 
 .banner-box:hover{
@@ -146,21 +138,42 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 width:100%;
 height:100%;
 object-fit:cover;
+transition: transform .3s ease;
+}
+
+/* ==== Fullscreen zoom ==== */
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+object-fit:contain;
+cursor:zoom-out;
+transition: transform .3s ease;
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="header">
-
 <div class="logo">deklonio</div>
-
 <div class="contact">
-<a href="https://wa.me/201037011985">+201037011985</a>
+<a href="https://wa.me/201037011985" target="_blank">
+<i class="fa-brands fa-whatsapp"></i> +201037011985
+</a>
 </div>
-
 </div>
 
 <div class="menu">
@@ -171,49 +184,40 @@ object-fit:cover;
 </div>
 
 <!-- Logos -->
-
 <div class="section" id="logos">
 <h2>Logos</h2>
-
 <div class="grid">
-
-<div class="box"><img src="logo1.png"></div>
-<div class="box"><img src="logo2.png"></div>
-<div class="box"><img src="logo3.png"></div>
-<div class="box"><img src="logo4.png"></div>
-<div class="box"><img src="logo5.png"></div>
-<div class="box"><img src="logo6.png"></div>
-<div class="box"><img src="logo7.png"></div>
-<div class="box"><img src="logo8.png"></div>
-<div class="box"><img src="logo9.png"></div>
-<div class="box"><img src="logo10.png"></div>
-
+<div class="box"><img src="logo1.png" alt=""></div>
+<div class="box"><img src="logo2.png" alt=""></div>
+<div class="box"><img src="logo3.png" alt=""></div>
+<div class="box"><img src="logo4.png" alt=""></div>
+<div class="box"><img src="logo5.png" alt=""></div>
+<div class="box"><img src="logo6.png" alt=""></div>
+<div class="box"><img src="logo7.png" alt=""></div>
+<div class="box"><img src="logo8.png" alt=""></div>
+<div class="box"><img src="logo9.png" alt=""></div>
+<div class="box"><img src="logo10.png" alt=""></div>
 </div>
 </div>
 
 <!-- Banners -->
-
 <div class="section" id="banners">
 <h2>Banners</h2>
-
 <div class="banner-grid">
-
-<div class="banner-box"><img src="banner1.png"></div>
-<div class="banner-box"><img src="banner2.png"></div>
-<div class="banner-box"><img src="banner3.png"></div>
-<div class="banner-box"><img src="banner4.png"></div>
-<div class="banner-box"><img src="banner5.png"></div>
-<div class="banner-box"><img src="banner6.png"></div>
-<div class="banner-box"><img src="banner7.png"></div>
-<div class="banner-box"><img src="banner8.png"></div>
-<div class="banner-box"><img src="banner9.png"></div>
-<div class="banner-box"><img src="banner10.png"></div>
-
+<div class="banner-box"><img src="banner1.png" alt=""></div>
+<div class="banner-box"><img src="banner2.png" alt=""></div>
+<div class="banner-box"><img src="banner3.png" alt=""></div>
+<div class="banner-box"><img src="banner4.png" alt=""></div>
+<div class="banner-box"><img src="banner5.png" alt=""></div>
+<div class="banner-box"><img src="banner6.png" alt=""></div>
+<div class="banner-box"><img src="banner7.png" alt=""></div>
+<div class="banner-box"><img src="banner8.png" alt=""></div>
+<div class="banner-box"><img src="banner9.png" alt=""></div>
+<div class="banner-box"><img src="banner10.png" alt=""></div>
 </div>
 </div>
 
 <!-- Packages -->
-
 <div class="section" id="packages">
 <h2>Packages</h2>
 <div class="grid">
@@ -231,7 +235,6 @@ object-fit:cover;
 </div>
 
 <!-- Prices -->
-
 <div class="section" id="prices">
 <h2>Price Lists</h2>
 <div class="grid">
@@ -247,6 +250,32 @@ object-fit:cover;
 <div class="box"></div>
 </div>
 </div>
+
+<!-- Fullscreen zoom overlay -->
+<div id="lightbox">
+<img src="" alt="">
+</div>
+
+<script>
+// Lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+document.querySelectorAll('.box img, .banner-box img').forEach(img=>{
+  img.addEventListener('click', ()=>{
+    lightbox.style.display='flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', ()=>{
+  lightbox.style.display='none';
+  lightboxImg.src='';
+});
+</script>
+
+<!-- FontAwesome for WhatsApp icon -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
