@@ -7,8 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <style>
-body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;}
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+body{
+  margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;
+}
+.header{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;
+}
 .logo{font-size:32px;font-weight:700;}
 .contact a{color:white;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;}
 .contact a i{color:white;}
@@ -42,7 +46,7 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <a href="#prices">Price Lists</a>
 </div>
 
-<!-- Logos -->
+<!-- Logos 12 خانة -->
 <div id="logos" class="section-title">Logos</div>
 <div class="grid">
   <div class="box"><img src="logo1.png" loading="lazy"></div>
@@ -59,7 +63,7 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <div class="box"><img src="logo12.png" loading="lazy"></div>
 </div>
 
-<!-- Banners -->
+<!-- Banners 5 خانة -->
 <div id="banners" class="section-title">Banners</div>
 <div class="banner-grid">
   <div class="banner-box"><img src="banner1.png" loading="lazy"></div>
@@ -67,14 +71,9 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <div class="banner-box"><img src="banner3.png" loading="lazy"></div>
   <div class="banner-box"><img src="banner4.png" loading="lazy"></div>
   <div class="banner-box"><img src="banner5.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner6.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner7.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner8.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner9.png" loading="lazy"></div>
-  <div class="banner-box"><img src="banner10.png" loading="lazy"></div>
 </div>
 
-<!-- Packages -->
+<!-- Packages 10 خانة -->
 <div id="packages" class="section-title">Packages</div>
 <div class="grid">
   <div class="box"><img src="package1.png" loading="lazy"></div>
@@ -89,7 +88,7 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <div class="box"><img src="package10.png" loading="lazy"></div>
 </div>
 
-<!-- Price Lists -->
+<!-- Price Lists 5 خانة -->
 <div id="prices" class="section-title">Price Lists</div>
 <div class="grid">
   <div class="box"><img src="price1.png" loading="lazy"></div>
@@ -97,25 +96,20 @@ body{margin:0;padding:40px;font-family:'Poppins',sans-serif;background:#0a0a0a;c
   <div class="box"><img src="price3.png" loading="lazy"></div>
   <div class="box"><img src="price4.png" loading="lazy"></div>
   <div class="box"><img src="price5.png" loading="lazy"></div>
-  <div class="box"><img src="price6.png" loading="lazy"></div>
-  <div class="box"><img src="price7.png" loading="lazy"></div>
-  <div class="box"><img src="price8.png" loading="lazy"></div>
-  <div class="box"><img src="price9.png" loading="lazy"></div>
-  <div class="box"><img src="price10.png" loading="lazy"></div>
 </div>
 
+<!-- Lightbox Zoom Fullscreen -->
 <div id="lightbox"><img src="" alt=""></div>
-
 <script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=lightbox.querySelector('img');
 document.querySelectorAll('img').forEach(img=>{
-  img.addEventListener('click', ()=>{
+  img.addEventListener('click',()=>{
     lightbox.style.display='flex';
-    lightboxImg.src = img.src;
+    lightboxImg.src=img.src;
   });
 });
-lightbox.addEventListener('click', ()=>{
+lightbox.addEventListener('click',()=>{
   lightbox.style.display='none';
   lightboxImg.src='';
 });
