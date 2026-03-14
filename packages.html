@@ -20,7 +20,7 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:40px;
+margin-bottom:20px;
 }
 .logo{
 font-size:32px;
@@ -108,6 +108,22 @@ z-index:999;
 max-width:90%;
 max-height:90%;
 }
+/* Back button */
+.back-btn{
+padding:10px 25px;
+background:#38bdf8;
+color:white;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:all .35s ease;
+display:inline-block;
+margin-bottom:20px;
+}
+.back-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(56,189,248,.4);
+}
 </style>
 </head>
 <body>
@@ -120,6 +136,9 @@ max-height:90%;
 </a>
 </div>
 </div>
+
+<!-- Back button -->
+<a href="index.html" class="back-btn">Back</a>
 
 <!-- Package 1 -->
 <div class="section-title">Package 1</div>
