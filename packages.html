@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Packages - deklonio</title>
+<title>deklonio Packages</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -20,11 +20,34 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:20px;
+margin-bottom:40px;
+flex-wrap:wrap;
+}
+.logo-section{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+@keyframes float{
+0%{ transform:translateY(0); }
+50%{ transform:translateY(-6px); }
+100%{ transform:translateY(0); }
 }
 .logo{
 font-size:32px;
 font-weight:700;
+animation:float 3s ease-in-out infinite;
+}
+.sub-logo{
+font-size:20px;
+color:#38bdf8;
+font-weight:500;
+animation:float 3.2s ease-in-out infinite;
+}
+.tagline{
+font-size:16px;
+color:#a1a1aa;
+animation:float 3.4s ease-in-out infinite;
 }
 .contact a{
 color:white;
@@ -33,18 +56,32 @@ font-weight:600;
 display:flex;
 align-items:center;
 gap:8px;
+margin-top:10px;
 }
-.section-title{
-margin-top:50px;
-margin-bottom:20px;
-font-size:24px;
+.back-btn{
+margin-top:20px;
+padding:10px 25px;
+border-radius:30px;
+text-decoration:none;
 font-weight:600;
+font-size:14px;
+transition:all .35s ease;
+background:#38bdf8;
+color:white;
+display:inline-block;
 }
+.back-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(56,189,248,.4);
+}
+
+/* ===== Grid المربعات ===== */
 .package-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,200px);
+grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
 gap:25px;
-justify-content:center;
+margin-top:20px;
+justify-items:center;
 }
 .box{
 width:200px;
@@ -68,14 +105,14 @@ transition:.35s;
 }
 .banner-box{
 width:100%;
-height:220px; /* ارتفاع مضبوط */
+height:220px; 
 background:#151515;
 border-radius:16px;
 overflow:hidden;
 border:1px solid #222;
 cursor:pointer;
 transition:.35s;
-grid-column:span 2; /* يملأ عرض صفين */
+grid-column:span 2; 
 }
 .box:hover,
 .tall-box:hover,
@@ -91,6 +128,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 }
+
 /* zoom */
 #lightbox{
 position:fixed;
@@ -108,88 +146,64 @@ z-index:999;
 max-width:90%;
 max-height:90%;
 }
-/* Back button */
-.back-btn{
-padding:10px 25px;
-background:#38bdf8;
-color:white;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-transition:all .35s ease;
-display:inline-block;
-margin-bottom:20px;
-}
-.back-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 20px rgba(56,189,248,.4);
-}
 </style>
 </head>
 <body>
 
 <div class="header">
+<div class="logo-section">
 <div class="logo">deklonio</div>
+<div class="sub-logo">website</div>
+<div class="tagline">The best designer</div>
+</div>
+
 <div class="contact">
 <a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> +201037011985
+<i class="fa-brands fa-whatsapp" style="color:white;"></i> +201037011985
 </a>
 </div>
 </div>
 
-<!-- Back button -->
 <a href="index.html" class="back-btn">Back</a>
 
-<!-- Package 1 -->
-<div class="section-title">Package 1</div>
+<!-- Packages -->
 <div class="package-grid">
-<img class="box" src="p1_1.png">
-<img class="box" src="p1_2.png">
-<img class="box" src="p1_3.png">
-<img class="box" src="p1_4.png">
-<img class="tall-box" src="p1_5.png">
-<img class="tall-box" src="p1_6.png">
-<img class="banner-box" src="p1_banner.png">
-</div>
+<!-- Package 1 -->
+<div class="box"><img src="p1_1.png" alt=""></div>
+<div class="box"><img src="p1_2.png" alt=""></div>
+<div class="box"><img src="p1_3.png" alt=""></div>
+<div class="box"><img src="p1_4.png" alt=""></div>
+<div class="tall-box"><img src="p1_5.png" alt=""></div>
+<div class="tall-box"><img src="p1_6.png" alt=""></div>
+<div class="banner-box"><img src="p1_banner.png" alt=""></div>
 
 <!-- Package 2 -->
-<div class="section-title">Package 2</div>
-<div class="package-grid">
-<img class="box" src="p2_1.png">
-<img class="box" src="p2_2.png">
-<img class="box" src="p2_3.png">
-<img class="box" src="p2_4.png">
-<img class="banner-box" src="p2_banner.png">
-</div>
+<div class="box"><img src="p2_1.png" alt=""></div>
+<div class="box"><img src="p2_2.png" alt=""></div>
+<div class="box"><img src="p2_3.png" alt=""></div>
+<div class="box"><img src="p2_4.png" alt=""></div>
+<div class="banner-box"><img src="p2_banner.png" alt=""></div>
 
 <!-- Package 3 -->
-<div class="section-title">Package 3</div>
-<div class="package-grid">
-<img class="box" src="p3_1.png">
-<img class="box" src="p3_2.png">
-<img class="box" src="p3_3.png">
-<img class="box" src="p3_4.png">
-<img class="box" src="p3_5.png">
-<img class="banner-box" src="p3_6.png">
-<img class="banner-box" src="p3_banner.png">
-</div>
+<div class="box"><img src="p3_1.png" alt=""></div>
+<div class="box"><img src="p3_2.png" alt=""></div>
+<div class="box"><img src="p3_3.png" alt=""></div>
+<div class="box"><img src="p3_4.png" alt=""></div>
+<div class="box"><img src="p3_5.png" alt=""></div>
+<div class="tall-box"><img src="p3_6.png" alt=""></div>
+<div class="banner-box"><img src="p3_banner.png" alt=""></div>
 
 <!-- Package 4 -->
-<div class="section-title">Package 4</div>
-<div class="package-grid">
-<img class="box" src="p4_1.png">
-<img class="box" src="p4_2.png">
-<img class="box" src="p4_3.png">
-<img class="banner-box" src="p4_banner.png">
-</div>
+<div class="box"><img src="p4_1.png" alt=""></div>
+<div class="box"><img src="p4_2.png" alt=""></div>
+<div class="box"><img src="p4_3.png" alt=""></div>
+<div class="banner-box"><img src="p4_banner.png" alt=""></div>
 
 <!-- Package 5 -->
-<div class="section-title">Package 5</div>
-<div class="package-grid">
-<img class="box" src="p5_1.png">
-<img class="box" src="p5_2.png">
-<img class="box" src="p5_3.png">
-<img class="banner-box" src="p5_banner.png">
+<div class="box"><img src="p5_1.png" alt=""></div>
+<div class="box"><img src="p5_2.png" alt=""></div>
+<div class="box"><img src="p5_3.png" alt=""></div>
+<div class="banner-box"><img src="p5_banner.png" alt=""></div>
 </div>
 
 <!-- zoom -->
@@ -200,7 +214,7 @@ box-shadow:0 10px 20px rgba(56,189,248,.4);
 <script>
 const lightbox = document.getElementById("lightbox")
 const lightImg = lightbox.querySelector("img")
-document.querySelectorAll("img").forEach(img=>{
+document.querySelectorAll(".package-grid img").forEach(img=>{
 img.onclick = ()=>{
 lightbox.style.display = "flex"
 lightImg.src = img.src
