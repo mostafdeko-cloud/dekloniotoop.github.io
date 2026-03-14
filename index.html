@@ -6,163 +6,44 @@
 <title>deklonio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#0a0a0a;
-color:white;
-padding:40px;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;padding:40px;}
 
 /* header */
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:50px;
-}
-
-.logo{
-font-size:32px;
-font-weight:700;
-letter-spacing:2px;
-}
-
-.contact a{
-color:white;
-text-decoration:none;
-font-weight:600;
-display:flex;
-align-items:center;
-gap:8px;
-}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:50px;}
+.logo{font-size:32px;font-weight:700;letter-spacing:2px;}
+.contact a{color:white;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;}
+.contact a i{color:white;}
 
 /* menu */
-.menu{
-display:flex;
-gap:20px;
-margin-bottom:60px;
-flex-wrap:wrap;
-}
-
-.menu a{
-text-decoration:none;
-color:white;
-padding:8px 20px;
-border-radius:25px;
-background:#00bfff;
-font-size:14px;
-transition:.3s;
-}
-
-.menu a:hover{
-transform:translateY(-4px);
-opacity:.8;
-}
+.menu{display:flex;gap:20px;margin-bottom:60px;flex-wrap:wrap;}
+.menu a{text-decoration:none;color:white;padding:8px 20px;border-radius:25px;background:#00bfff;font-size:14px;transition:.3s;}
+.menu a:hover{transform:translateY(-4px);opacity:.8;}
 
 /* sections */
-.section{
-margin-bottom:80px;
-}
-
-.section h2{
-margin-bottom:30px;
-font-size:28px;
-}
+.section{margin-bottom:80px;}
+.section h2{margin-bottom:30px;font-size:28px;}
 
 /* grid for logos and packages */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,200px);
-gap:25px;
-justify-content:center;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,200px);gap:25px;justify-content:center;}
 
 /* boxes */
-.box{
-width:200px;
-height:200px;
-background:#151515;
-border-radius:15px;
-overflow:hidden;
-border:1px solid #222;
-transition:.3s;
-cursor:pointer;
-}
-
-.box:hover{
-transform:translateY(-8px);
-border:1px solid #555;
-box-shadow:0 15px 25px rgba(0,0,0,0.6);
-}
-
-.box img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition: transform .3s ease;
-}
+.box{width:200px;height:200px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
+.box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
+.box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
 
 /* banners */
-.banner-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:25px;
-}
-
-.banner-box{
-width:100%;
-height:150px;
-background:#151515;
-border-radius:15px;
-overflow:hidden;
-border:1px solid #222;
-transition:.3s;
-cursor:pointer;
-}
-
-.banner-box:hover{
-transform:translateY(-8px);
-border:1px solid #555;
-box-shadow:0 15px 25px rgba(0,0,0,0.6);
-}
-
-.banner-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition: transform .3s ease;
-}
+.banner-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;}
+.banner-box{width:100%;height:150px;background:#151515;border-radius:15px;overflow:hidden;border:1px solid #222;transition:.3s;cursor:pointer;}
+.banner-box:hover{transform:translateY(-8px);border:1px solid #555;box-shadow:0 15px 25px rgba(0,0,0,0.6);}
+.banner-box img{width:100%;height:100%;object-fit:cover;transition: transform .3s ease;}
 
 /* ==== Fullscreen zoom ==== */
-#lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-
-#lightbox img{
-max-width:90%;
-max-height:90%;
-object-fit:contain;
-cursor:zoom-out;
-transition: transform .3s ease;
-}
-
+#lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:999;}
+#lightbox img{max-width:90%;max-height:90%;object-fit:contain;cursor:zoom-out;transition: transform .3s ease;}
 </style>
 </head>
 <body>
@@ -186,41 +67,42 @@ transition: transform .3s ease;
 <!-- Logos -->
 <div class="section" id="logos">
 <h2>Logos</h2>
-<div class="grid">
-<div class="box"><img src="logo1.png" alt=""></div>
-<div class="box"><img src="logo2.png" alt=""></div>
-<div class="box"><img src="logo3.png" alt=""></div>
-<div class="box"><img src="logo4.png" alt=""></div>
-<div class="box"><img src="logo5.png" alt=""></div>
-<div class="box"><img src="logo6.png" alt=""></div>
-<div class="box"><img src="logo7.png" alt=""></div>
-<div class="box"><img src="logo8.png" alt=""></div>
-<div class="box"><img src="logo9.png" alt=""></div>
-<div class="box"><img src="logo10.png" alt=""></div>
+<div class="grid" id="logo-grid">
+<!-- الصور هتتحمل هنا تلقائي -->
+<div class="box"><img src="logo1.png"></div>
+<div class="box"><img src="logo2.png"></div>
+<div class="box"><img src="logo3.png"></div>
+<div class="box"><img src="logo4.png"></div>
+<div class="box"><img src="logo5.png"></div>
+<div class="box"><img src="logo6.png"></div>
+<div class="box"><img src="logo7.png"></div>
+<div class="box"><img src="logo8.png"></div>
+<div class="box"><img src="logo9.png"></div>
+<div class="box"><img src="logo10.png"></div>
 </div>
 </div>
 
 <!-- Banners -->
 <div class="section" id="banners">
 <h2>Banners</h2>
-<div class="banner-grid">
-<div class="banner-box"><img src="banner1.png" alt=""></div>
-<div class="banner-box"><img src="banner2.png" alt=""></div>
-<div class="banner-box"><img src="banner3.png" alt=""></div>
-<div class="banner-box"><img src="banner4.png" alt=""></div>
-<div class="banner-box"><img src="banner5.png" alt=""></div>
-<div class="banner-box"><img src="banner6.png" alt=""></div>
-<div class="banner-box"><img src="banner7.png" alt=""></div>
-<div class="banner-box"><img src="banner8.png" alt=""></div>
-<div class="banner-box"><img src="banner9.png" alt=""></div>
-<div class="banner-box"><img src="banner10.png" alt=""></div>
+<div class="banner-grid" id="banner-grid">
+<div class="banner-box"><img src="banner1.png"></div>
+<div class="banner-box"><img src="banner2.png"></div>
+<div class="banner-box"><img src="banner3.png"></div>
+<div class="banner-box"><img src="banner4.png"></div>
+<div class="banner-box"><img src="banner5.png"></div>
+<div class="banner-box"><img src="banner6.png"></div>
+<div class="banner-box"><img src="banner7.png"></div>
+<div class="banner-box"><img src="banner8.png"></div>
+<div class="banner-box"><img src="banner9.png"></div>
+<div class="banner-box"><img src="banner10.png"></div>
 </div>
 </div>
 
 <!-- Packages -->
 <div class="section" id="packages">
 <h2>Packages</h2>
-<div class="grid">
+<div class="grid" id="package-grid">
 <div class="box"></div>
 <div class="box"></div>
 <div class="box"></div>
@@ -237,7 +119,7 @@ transition: transform .3s ease;
 <!-- Prices -->
 <div class="section" id="prices">
 <h2>Price Lists</h2>
-<div class="grid">
+<div class="grid" id="price-grid">
 <div class="box"></div>
 <div class="box"></div>
 <div class="box"></div>
@@ -257,7 +139,7 @@ transition: transform .3s ease;
 </div>
 
 <script>
-// Lightbox functionality
+// Fullscreen zoom
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 
@@ -273,9 +155,6 @@ lightbox.addEventListener('click', ()=>{
   lightboxImg.src='';
 });
 </script>
-
-<!-- FontAwesome for WhatsApp icon -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
