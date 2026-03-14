@@ -6,7 +6,6 @@
 <title>deklonio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 
@@ -42,36 +41,13 @@ font-weight:700;
 letter-spacing:2px;
 }
 
-/* whatsapp */
-
-.contact{
-display:flex;
-align-items:center;
-gap:8px;
-margin-left:60px;
-}
-
-.whatsapp{
-display:flex;
-align-items:center;
-gap:8px;
+.contact a{
+color:white;
 text-decoration:none;
-color:white;
 font-weight:600;
-transition:.3s;
 }
 
-.whatsapp i{
-color:white;
-font-size:20px;
-}
-
-.whatsapp:hover{
-transform:translateY(-4px);
-opacity:.7;
-}
-
-/* menu buttons */
+/* menu */
 
 .menu{
 display:flex;
@@ -85,10 +61,9 @@ text-decoration:none;
 color:white;
 padding:8px 20px;
 border-radius:25px;
-transition:.3s;
+background:#00bfff;
 font-size:14px;
-background:#00bfff; /* أزرق سماوي */
-text-align:center;
+transition:.3s;
 }
 
 .menu a:hover{
@@ -123,10 +98,7 @@ width:200px;
 height:200px;
 background:#151515;
 border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#777;
+overflow:hidden;
 border:1px solid #222;
 transition:.3s;
 cursor:pointer;
@@ -138,13 +110,20 @@ border:1px solid #555;
 box-shadow:0 15px 25px rgba(0,0,0,0.6);
 }
 
+/* صورة اللوجو */
+
+.box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 /* banners */
 
 .banner-grid{
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
 gap:25px;
-justify-content:center;
 }
 
 .banner-box{
@@ -152,19 +131,21 @@ width:100%;
 height:150px;
 background:#151515;
 border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#777;
+overflow:hidden;
 border:1px solid #222;
 transition:.3s;
-cursor:pointer;
 }
 
 .banner-box:hover{
 transform:translateY(-8px);
 border:1px solid #555;
 box-shadow:0 15px 25px rgba(0,0,0,0.6);
+}
+
+.banner-box img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 </style>
@@ -177,23 +158,16 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 <div class="logo">deklonio</div>
 
 <div class="contact">
-<a class="whatsapp" href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-+201037011985
-</a>
+<a href="https://wa.me/201037011985">+201037011985</a>
 </div>
 
 </div>
-
-<!-- menu -->
 
 <div class="menu">
-
 <a href="#logos">Logos</a>
 <a href="#banners">Banners</a>
 <a href="#packages">Packages</a>
 <a href="#prices">Price Lists</a>
-
 </div>
 
 <!-- Logos -->
@@ -202,18 +176,18 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 <h2>Logos</h2>
 
 <div class="grid">
-<div class="box">
-<img src="logo1.png">
-</div>
-<div class="box">Logo 2</div>
-<div class="box">Logo 3</div>
-<div class="box">Logo 4</div>
-<div class="box">Logo 5</div>
-<div class="box">Logo 6</div>
-<div class="box">Logo 7</div>
-<div class="box">Logo 8</div>
-<div class="box">Logo 9</div>
-<div class="box">Logo 10</div>
+
+<div class="box"><img src="logo1.png"></div>
+<div class="box"><img src="logo2.png"></div>
+<div class="box"><img src="logo3.png"></div>
+<div class="box"><img src="logo4.png"></div>
+<div class="box"><img src="logo5.png"></div>
+<div class="box"><img src="logo6.png"></div>
+<div class="box"><img src="logo7.png"></div>
+<div class="box"><img src="logo8.png"></div>
+<div class="box"><img src="logo9.png"></div>
+<div class="box"><img src="logo10.png"></div>
+
 </div>
 </div>
 
@@ -223,16 +197,18 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 <h2>Banners</h2>
 
 <div class="banner-grid">
-<div class="banner-box">Banner 1</div>
-<div class="banner-box">Banner 2</div>
-<div class="banner-box">Banner 3</div>
-<div class="banner-box">Banner 4</div>
-<div class="banner-box">Banner 5</div>
-<div class="banner-box">Banner 6</div>
-<div class="banner-box">Banner 7</div>
-<div class="banner-box">Banner 8</div>
-<div class="banner-box">Banner 9</div>
-<div class="banner-box">Banner 10</div>
+
+<div class="banner-box"><img src="banner1.png"></div>
+<div class="banner-box"><img src="banner2.png"></div>
+<div class="banner-box"><img src="banner3.png"></div>
+<div class="banner-box"><img src="banner4.png"></div>
+<div class="banner-box"><img src="banner5.png"></div>
+<div class="banner-box"><img src="banner6.png"></div>
+<div class="banner-box"><img src="banner7.png"></div>
+<div class="banner-box"><img src="banner8.png"></div>
+<div class="banner-box"><img src="banner9.png"></div>
+<div class="banner-box"><img src="banner10.png"></div>
+
 </div>
 </div>
 
@@ -240,18 +216,17 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 
 <div class="section" id="packages">
 <h2>Packages</h2>
-
 <div class="grid">
-<div class="box">Package 1</div>
-<div class="box">Package 2</div>
-<div class="box">Package 3</div>
-<div class="box">Package 4</div>
-<div class="box">Package 5</div>
-<div class="box">Package 6</div>
-<div class="box">Package 7</div>
-<div class="box">Package 8</div>
-<div class="box">Package 9</div>
-<div class="box">Package 10</div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
 </div>
 </div>
 
@@ -259,18 +234,17 @@ box-shadow:0 15px 25px rgba(0,0,0,0.6);
 
 <div class="section" id="prices">
 <h2>Price Lists</h2>
-
 <div class="grid">
-<div class="box">Price 1</div>
-<div class="box">Price 2</div>
-<div class="box">Price 3</div>
-<div class="box">Price 4</div>
-<div class="box">Price 5</div>
-<div class="box">Price 6</div>
-<div class="box">Price 7</div>
-<div class="box">Price 8</div>
-<div class="box">Price 9</div>
-<div class="box">Price 10</div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
 </div>
 </div>
 
