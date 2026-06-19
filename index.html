@@ -1,236 +1,100 @@
-<!DOCTYPE html>
+Enter<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>deklonio</title>
-
+<title>Deklonio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-body{
-margin:0;
-padding:40px;
-font-family:'Poppins',sans-serif;
-background:#0a0a0a;
-color:white;
-}
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-flex-wrap:wrap;
-}
-.logo-section{
-display:flex;
-flex-direction:column;
-gap:5px;
-}
-@keyframes float{
-0%{ transform:translateY(0); }
-50%{ transform:translateY(-6px); }
-100%{ transform:translateY(0); }
-}
-.logo{
-font-size:32px;
-font-weight:700;
-animation:float 3s ease-in-out infinite;
-}
-.sub-logo{
-font-size:20px;
-color:#38bdf8;
-font-weight:500;
-animation:float 3.2s ease-in-out infinite;
-}
-.tagline{
-font-size:16px;
-color:#a1a1aa;
-animation:float 3.4s ease-in-out infinite;
-}
-.contact a{
-color:white;
-text-decoration:none;
-font-weight:600;
-display:flex;
-align-items:center;
-gap:8px;
-margin-top:10px;
-}
-.buttons{
-display:flex;
-gap:15px;
-margin-top:30px;
-flex-wrap:wrap;
-}
-.btn{
-padding:10px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-transition:all .35s ease;
-background:#38bdf8;
-color:white;
-}
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 20px rgba(56,189,248,.4);
-}
-
-/* ===== Grid المربعات ===== */
-.package-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
-gap:25px;
-margin-top:20px;
-justify-items:center;
-}
-.box{
-width:200px;
-height:200px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
-}
-.tall-box{
-width:200px;
-height:300px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
-}
-.banner-box{
-width:100%;
-height:220px; 
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
-grid-column:span 2; 
-}
-.box:hover,
-.tall-box:hover,
-.banner-box:hover{
-transform:translateY(-10px);
-border:1px solid #444;
-box-shadow:0 20px 30px rgba(0,0,0,.7);
-}
-.box img,
-.tall-box img,
-.banner-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* zoom */
-#lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.96);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
-}
-#lightbox img{
-max-width:90%;
-max-height:90%;
-}
+body{margin:0;padding:40px;font-family:Poppins,sans-serif;background:#0a0a0a;color:#fff}
+.header{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+background:rgba(255,255,255,.08);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.18);border-radius:26px;padding:25px 30px;
+box-shadow:0 8px 30px rgba(0,0,0,.35), inset 0 1px 1px rgba(255,255,255,.25)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.logo{font-size:32px;font-weight:700;animation:float 3s infinite}
+.sub{font-size:20px;color:#7dd3fc;animation:float 3.2s infinite}
+.tag{font-size:16px;color:#cbd5e1;animation:float 3.4s infinite}
+.contact a{color:#fff;text-decoration:none;font-weight:600}
+.buttons{display:flex;gap:15px;flex-wrap:wrap;margin:30px 0}
+.btn{padding:12px 26px;border-radius:18px;text-decoration:none;color:#fff;font-weight:600;
+background:rgba(56,189,248,.18);border:1px solid rgba(125,211,252,.45);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+box-shadow:inset 0 1px 1px rgba(255,255,255,.25),0 8px 20px rgba(0,0,0,.25);
+transition:.3s}
+.btn:hover{transform:translateY(-4px) scale(1.03)}
+.section-title{font-size:26px;margin:35px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:25px}
+.box,.banner{overflow:hidden;border-radius:18px;background:#151515}
+.box{height:200px}.banner{height:220px}
+.box img,.banner img{width:100%;height:100%;object-fit:cover;cursor:pointer}
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);
+justify-content:center;align-items:center;z-index:999}
+.frame{padding:14px;border-radius:30px;background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(22px);
+box-shadow:0 0 30px rgba(125,211,252,.25), inset 0 1px 1px rgba(255,255,255,.3);
+animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+#lightbox img{max-width:88vw;max-height:88vh;border-radius:18px}
 </style>
 </head>
 <body>
-
 <div class="header">
-<div class="logo-section">
-<div class="logo">deklonio</div>
-<div class="sub-logo">website</div>
-<div class="tagline">The best designer</div>
+<div><div class="logo">deklonio</div><div class="sub">website</div><div class="tag">The best designer</div></div>
+<div class="contact"><a href="https://wa.me/201037011985"><i class="fa-brands fa-whatsapp"></i> +201037011985</a></div>
 </div>
 
-<div class="contact">
-<a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp" style="color:white;"></i> +201037011985
-</a>
-</div>
-</div>
-
-<!-- Buttons for categories -->
 <div class="buttons">
-<a href="#logos" class="btn">Logos</a>
-<a href="#banners" class="btn">Banners</a>
-<a href="packages.html" class="btn">Packages</a>
-<a href="#prices" class="btn">Price lists</a>
+<a class="btn" href="#logos">Logos</a>
+<a class="btn" href="#banners">Banners</a>
+<a class="btn" href="packages.html">Packages</a>
+<a class="btn" href="#prices">Price Lists</a>
 </div>
 
-<!-- Logos -->
-<div id="logos" class="section-title">Logos</div>
-<div class="package-grid">
-<div class="box"><img src="logo1.png" alt=""></div>
-<div class="box"><img src="logo2.png" alt=""></div>
-<div class="box"><img src="logo3.png" alt=""></div>
-<div class="box"><img src="logo4.png" alt=""></div>
-<div class="box"><img src="logo5.png" alt=""></div>
-<div class="box"><img src="logo6.png" alt=""></div>
-<div class="box"><img src="logo7.png" alt=""></div>
-<div class="box"><img src="logo8.png" alt=""></div>
-<div class="box"><img src="logo9.png" alt=""></div>
-<div class="box"><img src="logo10.png" alt=""></div>
-<div class="box"><img src="logo11.png" alt=""></div>
-<div class="box"><img src="logo12.png" alt=""></div>
+<h2 id="logos" class="section-title">Logos</h2>
+<div class="grid">
+<div class="box"><img loading="lazy" src="logo1.png"></div>
+<div class="box"><img loading="lazy" src="logo2.png"></div>
+<div class="box"><img loading="lazy" src="logo3.png"></div>
+<div class="box"><img loading="lazy" src="logo4.png"></div>
+<div class="box"><img loading="lazy" src="logo5.png"></div>
+<div class="box"><img loading="lazy" src="logo6.png"></div>
+<div class="box"><img loading="lazy" src="logo7.png"></div>
+<div class="box"><img loading="lazy" src="logo8.png"></div>
+<div class="box"><img loading="lazy" src="logo9.png"></div>
+<div class="box"><img loading="lazy" src="logo10.png"></div>
+<div class="box"><img loading="lazy" src="logo11.png"></div>
+<div class="box"><img loading="lazy" src="logo12.png"></div>
 </div>
 
-<!-- Banners -->
-<div id="banners" class="section-title">Banners</div>
-<div class="package-grid">
-<div class="banner-box"><img src="banner1.png" alt=""></div>
-<div class="banner-box"><img src="banner2.png" alt=""></div>
-<div class="banner-box"><img src="banner3.png" alt=""></div>
-<div class="banner-box"><img src="banner4.png" alt=""></div>
-<div class="banner-box"><img src="banner5.png" alt=""></div>
+<h2 id="banners" class="section-title">Banners</h2>
+<div class="grid">
+<div class="banner"><img loading="lazy" src="banner1.png"></div>
+<div class="banner"><img loading="lazy" src="banner2.png"></div>
+<div class="banner"><img loading="lazy" src="banner3.png"></div>
+<div class="banner"><img loading="lazy" src="banner4.png"></div>
+<div class="banner"><img loading="lazy" src="banner5.png"></div>
 </div>
 
-<!-- Price lists -->
-<div id="prices" class="section-title">Price Lists</div>
-<div class="package-grid">
-<div class="box"><img src="price1.png" alt=""></div>
-<div class="box"><img src="price2.png" alt=""></div>
-<div class="box"><img src="price3.png" alt=""></div>
-<div class="box"><img src="price4.png" alt=""></div>
-<div class="box"><img src="price5.png" alt=""></div>
+<h2 id="prices" class="section-title">Price Lists</h2>
+<div class="grid">
+<div class="box"><img loading="lazy" src="price1.png"></div>
+<div class="box"><img loading="lazy" src="price2.png"></div>
+<div class="box"><img loading="lazy" src="price3.png"></div>
+<div class="box"><img loading="lazy" src="price4.png"></div>
+<div class="box"><img loading="lazy" src="price5.png"></div>
 </div>
 
-<!-- zoom -->
-<div id="lightbox">
-<img src="">
-</div>
-
+<div id="lightbox"><div class="frame"><img></div></div>
 <script>
-const lightbox = document.getElementById("lightbox")
-const lightImg = lightbox.querySelector("img")
-document.querySelectorAll(".package-grid img").forEach(img=>{
-img.onclick = ()=>{
-lightbox.style.display = "flex"
-lightImg.src = img.src
-}
-})
-lightbox.onclick = ()=>{
-lightbox.style.display = "none"
-}
+const lb=document.getElementById('lightbox');
+const img=lb.querySelector('img');
+document.querySelectorAll('img').forEach(i=>{
+ if(i.closest('#lightbox'))return;
+ i.onclick=()=>{img.src=i.src;lb.style.display='flex';}
+});
+lb.onclick=()=>lb.style.display='none';
 </script>
-
 </body>
 </html>
