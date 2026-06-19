@@ -7,20 +7,26 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<!-- Font Awesome FIX -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
 padding:40px;
 font-family:'Poppins',sans-serif;
-background:#0a0a0a;
+background: radial-gradient(circle at top, #0f172a, #050505 60%, #000);
 color:white;
+}
+
+/* ===== GLASS EFFECT BASE ===== */
+.glass{
+background: rgba(255,255,255,0.06);
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+border: 1px solid rgba(255,255,255,0.1);
+box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+border-radius: 16px;
 }
 
 /* HEADER */
@@ -30,6 +36,7 @@ justify-content:space-between;
 align-items:center;
 margin-bottom:40px;
 flex-wrap:wrap;
+padding:20px;
 }
 
 .logo-section{
@@ -81,19 +88,22 @@ flex-wrap:wrap;
 }
 
 .btn{
-padding:12px 28px;
-border-radius:50px;
+padding:12px 25px;
+border-radius:999px;
 text-decoration:none;
 font-weight:600;
 font-size:14px;
 transition:.3s;
-background:#38bdf8;
+background: rgba(56,189,248,0.2);
+border:1px solid rgba(56,189,248,0.4);
+backdrop-filter: blur(10px);
 color:white;
 }
 
 .btn:hover{
 transform:translateY(-4px) scale(1.05);
-box-shadow:0 10px 20px rgba(56,189,248,.4);
+background: rgba(56,189,248,0.35);
+box-shadow:0 10px 25px rgba(56,189,248,0.3);
 }
 
 /* SECTION TITLE */
@@ -114,48 +124,47 @@ margin-top:20px;
 justify-items:center;
 }
 
+/* GLASS CARDS */
+.box,
+.tall-box,
+.banner-box{
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:16px;
+overflow:hidden;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 8px 30px rgba(0,0,0,0.3);
+}
+
 .box{
 width:200px;
 height:200px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
 }
 
 .tall-box{
 width:200px;
 height:300px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
 }
 
 .banner-box{
 width:100%;
 height:220px;
-background:#151515;
-border-radius:16px;
-overflow:hidden;
-border:1px solid #222;
-cursor:pointer;
-transition:.35s;
 grid-column:1 / -1;
 }
 
+/* HOVER EFFECT */
 .box:hover,
 .tall-box:hover,
 .banner-box:hover{
-transform:translateY(-8px) scale(1.02);
-border:1px solid #444;
-box-shadow:0 20px 30px rgba(0,0,0,.7);
+transform:translateY(-8px) scale(1.03);
+border:1px solid rgba(56,189,248,0.5);
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
+/* IMAGES */
 .box img,
 .tall-box img,
 .banner-box img{
@@ -167,29 +176,19 @@ object-fit:cover;
 /* LIGHTBOX */
 #lightbox{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.96);
-display:flex;
+inset:0;
+background:rgba(0,0,0,0.9);
+display:none;
 align-items:center;
 justify-content:center;
 z-index:999;
-
-opacity:0;
-visibility:hidden;
-transition:.3s;
-}
-
-#lightbox.show{
-opacity:1;
-visibility:visible;
+backdrop-filter: blur(10px);
 }
 
 #lightbox img{
 max-width:90%;
 max-height:90%;
+border-radius:12px;
 }
 
 /* RESPONSIVE */
@@ -212,17 +211,13 @@ grid-template-columns:1fr;
 width:100%;
 max-width:320px;
 }
-
-.buttons{
-justify-content:center;
-}
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<div class="header glass">
 <div class="logo-section">
 <div class="logo">deklonio</div>
 <div class="sub-logo">website</div>
@@ -236,7 +231,6 @@ justify-content:center;
 </div>
 </div>
 
-<!-- Buttons -->
 <div class="buttons">
 <a href="#logos" class="btn">Logos</a>
 <a href="#banners" class="btn">Banners</a>
@@ -244,46 +238,43 @@ justify-content:center;
 <a href="#prices" class="btn">Price lists</a>
 </div>
 
-<!-- LOGOS -->
 <div id="logos" class="section-title">Logos</div>
 <div class="package-grid">
-<div class="box"><img src="logo1.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo2.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo3.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo4.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo5.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo6.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo7.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo8.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo9.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo10.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo11.png" loading="lazy" alt=""></div>
-<div class="box"><img src="logo12.png" loading="lazy" alt=""></div>
+<div class="box"><img src="logo1.png"></div>
+<div class="box"><img src="logo2.png"></div>
+<div class="box"><img src="logo3.png"></div>
+<div class="box"><img src="logo4.png"></div>
+<div class="box"><img src="logo5.png"></div>
+<div class="box"><img src="logo6.png"></div>
+<div class="box"><img src="logo7.png"></div>
+<div class="box"><img src="logo8.png"></div>
+<div class="box"><img src="logo9.png"></div>
+<div class="box"><img src="logo10.png"></div>
+<div class="box"><img src="logo11.png"></div>
+<div class="box"><img src="logo12.png"></div>
 </div>
 
-<!-- BANNERS -->
 <div id="banners" class="section-title">Banners</div>
 <div class="package-grid">
-<div class="banner-box"><img src="banner1.png" loading="lazy" alt=""></div>
-<div class="banner-box"><img src="banner2.png" loading="lazy" alt=""></div>
-<div class="banner-box"><img src="banner3.png" loading="lazy" alt=""></div>
-<div class="banner-box"><img src="banner4.png" loading="lazy" alt=""></div>
-<div class="banner-box"><img src="banner5.png" loading="lazy" alt=""></div>
+<div class="banner-box"><img src="banner1.png"></div>
+<div class="banner-box"><img src="banner2.png"></div>
+<div class="banner-box"><img src="banner3.png"></div>
+<div class="banner-box"><img src="banner4.png"></div>
+<div class="banner-box"><img src="banner5.png"></div>
 </div>
 
-<!-- PRICES -->
 <div id="prices" class="section-title">Price Lists</div>
 <div class="package-grid">
-<div class="box"><img src="price1.png" loading="lazy" alt=""></div>
-<div class="box"><img src="price2.png" loading="lazy" alt=""></div>
-<div class="box"><img src="price3.png" loading="lazy" alt=""></div>
-<div class="box"><img src="price4.png" loading="lazy" alt=""></div>
-<div class="box"><img src="price5.png" loading="lazy" alt=""></div>
+<div class="box"><img src="price1.png"></div>
+<div class="box"><img src="price2.png"></div>
+<div class="box"><img src="price3.png"></div>
+<div class="box"><img src="price4.png"></div>
+<div class="box"><img src="price5.png"></div>
 </div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
-<img src="" alt="">
+<img src="">
 </div>
 
 <script>
@@ -291,21 +282,15 @@ const lightbox = document.getElementById("lightbox");
 const lightImg = lightbox.querySelector("img");
 
 document.querySelectorAll(".package-grid img").forEach(img=>{
-img.addEventListener("click",()=>{
+img.onclick = ()=>{
 lightImg.src = img.src;
-lightbox.classList.add("show");
-});
-});
-
-lightbox.addEventListener("click",()=>{
-lightbox.classList.remove("show");
-});
-
-document.addEventListener("keydown",(e)=>{
-if(e.key==="Escape"){
-lightbox.classList.remove("show");
+lightbox.style.display = "flex";
 }
 });
+
+lightbox.onclick = ()=>{
+lightbox.style.display = "none";
+}
 </script>
 
 </body>
