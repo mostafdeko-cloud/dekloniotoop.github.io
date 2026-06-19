@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>deklonio</title>
+<title>deklonio - Anime Style</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
@@ -15,18 +13,39 @@ body{
 margin:0;
 padding:40px;
 font-family:'Poppins',sans-serif;
-background: radial-gradient(circle at top, #0f172a, #050505 60%, #000);
+background: radial-gradient(circle at top, #1a1400, #000000 60%);
 color:white;
+overflow-x:hidden;
 }
 
-/* ===== GLASS EFFECT BASE ===== */
-.glass{
-background: rgba(255,255,255,0.06);
-backdrop-filter: blur(14px);
--webkit-backdrop-filter: blur(14px);
-border: 1px solid rgba(255,255,255,0.1);
-box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-border-radius: 16px;
+/* ===== glowing background effect ===== */
+body::before{
+content:"";
+position:fixed;
+top:-200px;
+left:-200px;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(255,215,0,0.25), transparent 60%);
+filter:blur(60px);
+animation:floatGlow 6s ease-in-out infinite;
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-200px;
+right:-200px;
+width:500px;
+height:500px;
+background:radial-gradient(circle, rgba(255,200,0,0.18), transparent 60%);
+filter:blur(60px);
+animation:floatGlow 7s ease-in-out infinite;
+}
+
+@keyframes floatGlow{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-30px);}
 }
 
 /* HEADER */
@@ -34,109 +53,123 @@ border-radius: 16px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:40px;
 flex-wrap:wrap;
+margin-bottom:40px;
 padding:20px;
-}
-
-.logo-section{
-display:flex;
-flex-direction:column;
-gap:5px;
-}
-
-@keyframes float{
-0%{ transform:translateY(0); }
-50%{ transform:translateY(-6px); }
-100%{ transform:translateY(0); }
+border:1px solid rgba(255,215,0,0.2);
+border-radius:18px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 }
 
 .logo{
-font-size:32px;
-font-weight:700;
-animation:float 3s ease-in-out infinite;
+font-size:34px;
+font-weight:800;
+color:#ffd700;
+text-shadow:0 0 15px rgba(255,215,0,0.6);
+animation:glowText 3s infinite alternate;
+}
+
+@keyframes glowText{
+from{ text-shadow:0 0 10px #ffd700; }
+to{ text-shadow:0 0 25px #ffea70; }
 }
 
 .sub-logo{
-font-size:20px;
-color:#38bdf8;
-font-weight:500;
+color:#ffcc00;
+font-size:18px;
+font-weight:600;
 }
 
 .tagline{
-font-size:16px;
-color:#a1a1aa;
+color:#aaa;
+font-size:14px;
 }
 
 /* CONTACT */
 .contact a{
-color:white;
+color:#ffd700;
 text-decoration:none;
-font-weight:600;
+font-weight:700;
 display:flex;
 align-items:center;
 gap:8px;
-margin-top:10px;
 }
 
 /* BUTTONS */
 .buttons{
 display:flex;
 gap:15px;
-margin-top:30px;
 flex-wrap:wrap;
+margin-top:25px;
 }
 
 .btn{
-padding:12px 25px;
+padding:12px 26px;
 border-radius:999px;
 text-decoration:none;
-font-weight:600;
+font-weight:700;
 font-size:14px;
+color:#000;
+background:linear-gradient(45deg,#ffd700,#ffb300);
+box-shadow:0 0 15px rgba(255,215,0,0.4);
 transition:.3s;
-background: rgba(56,189,248,0.2);
-border:1px solid rgba(56,189,248,0.4);
-backdrop-filter: blur(10px);
-color:white;
 }
 
 .btn:hover{
-transform:translateY(-4px) scale(1.05);
-background: rgba(56,189,248,0.35);
-box-shadow:0 10px 25px rgba(56,189,248,0.3);
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 0 25px rgba(255,215,0,0.8);
 }
 
 /* SECTION TITLE */
 .section-title{
-font-size:28px;
-font-weight:700;
 margin-top:60px;
 margin-bottom:20px;
-color:#38bdf8;
+font-size:28px;
+font-weight:800;
+color:#ffd700;
+text-shadow:0 0 10px rgba(255,215,0,0.5);
 }
 
 /* GRID */
 .package-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
 gap:25px;
-margin-top:20px;
 justify-items:center;
 }
 
-/* GLASS CARDS */
+/* ANIME CARDS */
 .box,
 .tall-box,
 .banner-box{
-background: rgba(255,255,255,0.05);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border:1px solid rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.6);
+border:1px solid rgba(255,215,0,0.25);
 border-radius:16px;
 overflow:hidden;
 cursor:pointer;
-transition:.35s;
-box-shadow:0 8px 30px rgba(0,0,0,0.3);
+transition:.3s;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+position:relative;
+}
+
+.box::after,
+.tall-box::after,
+.banner-box::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,215,0,0.15),transparent);
+transition:.6s;
+}
+
+.box:hover::after,
+.tall-box:hover::after,
+.banner-box:hover::after{
+left:100%;
 }
 
 .box{
@@ -155,13 +188,12 @@ height:220px;
 grid-column:1 / -1;
 }
 
-/* HOVER EFFECT */
 .box:hover,
 .tall-box:hover,
 .banner-box:hover{
-transform:translateY(-8px) scale(1.03);
-border:1px solid rgba(56,189,248,0.5);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+transform:translateY(-8px) scale(1.04);
+border-color:#ffd700;
+box-shadow:0 0 30px rgba(255,215,0,0.5);
 }
 
 /* IMAGES */
@@ -171,36 +203,33 @@ box-shadow:0 20px 40px rgba(0,0,0,0.6);
 width:100%;
 height:100%;
 object-fit:cover;
+filter:contrast(1.1) saturate(1.2);
 }
 
 /* LIGHTBOX */
 #lightbox{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.95);
 display:none;
 align-items:center;
 justify-content:center;
 z-index:999;
-backdrop-filter: blur(10px);
+backdrop-filter:blur(8px);
 }
 
 #lightbox img{
 max-width:90%;
 max-height:90%;
+border:2px solid #ffd700;
 border-radius:12px;
+box-shadow:0 0 30px rgba(255,215,0,0.4);
 }
 
 /* RESPONSIVE */
 @media(max-width:600px){
-
-body{
-padding:20px;
-}
-
+body{padding:20px;}
 .logo{font-size:26px;}
-.sub-logo{font-size:18px;}
-.tagline{font-size:14px;}
 
 .package-grid{
 grid-template-columns:1fr;
@@ -217,25 +246,25 @@ max-width:320px;
 
 <body>
 
-<div class="header glass">
-<div class="logo-section">
+<div class="header">
+<div>
 <div class="logo">deklonio</div>
-<div class="sub-logo">website</div>
-<div class="tagline">The best designer</div>
+<div class="sub-logo">anime studio</div>
+<div class="tagline">Golden creative designer</div>
 </div>
 
 <div class="contact">
-<a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp"></i> +201037011985
+<a href="https://wa.me/201037011985">
+<i class="fa-brands fa-whatsapp"></i> Contact
 </a>
 </div>
 </div>
 
 <div class="buttons">
-<a href="#logos" class="btn">Logos</a>
-<a href="#banners" class="btn">Banners</a>
-<a href="packages.html" class="btn">Packages</a>
-<a href="#prices" class="btn">Price lists</a>
+<a class="btn" href="#logos">Logos</a>
+<a class="btn" href="#banners">Banners</a>
+<a class="btn" href="packages.html">Packages</a>
+<a class="btn" href="#prices">Prices</a>
 </div>
 
 <div id="logos" class="section-title">Logos</div>
@@ -282,14 +311,14 @@ const lightbox = document.getElementById("lightbox");
 const lightImg = lightbox.querySelector("img");
 
 document.querySelectorAll(".package-grid img").forEach(img=>{
-img.onclick = ()=>{
-lightImg.src = img.src;
-lightbox.style.display = "flex";
+img.onclick=()=>{
+lightImg.src=img.src;
+lightbox.style.display="flex";
 }
 });
 
-lightbox.onclick = ()=>{
-lightbox.style.display = "none";
+lightbox.onclick=()=>{
+lightbox.style.display="none";
 }
 </script>
 
