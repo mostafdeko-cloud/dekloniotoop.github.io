@@ -3,324 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>deklonio - Anime Style</title>
+<title>deklonio Packages</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 <style>
 body{
 margin:0;
 padding:40px;
 font-family:'Poppins',sans-serif;
-background: radial-gradient(circle at top, #1a1400, #000000 60%);
+background:#0a0a0a;
 color:white;
-overflow-x:hidden;
 }
-
-/* ===== glowing background effect ===== */
-body::before{
-content:"";
-position:fixed;
-top:-200px;
-left:-200px;
-width:500px;
-height:500px;
-background:radial-gradient(circle, rgba(255,215,0,0.25), transparent 60%);
-filter:blur(60px);
-animation:floatGlow 6s ease-in-out infinite;
-}
-
-body::after{
-content:"";
-position:fixed;
-bottom:-200px;
-right:-200px;
-width:500px;
-height:500px;
-background:radial-gradient(circle, rgba(255,200,0,0.18), transparent 60%);
-filter:blur(60px);
-animation:floatGlow 7s ease-in-out infinite;
-}
-
-@keyframes floatGlow{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-30px);}
-}
-
-/* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-flex-wrap:wrap;
 margin-bottom:40px;
-padding:20px;
-border:1px solid rgba(255,215,0,0.2);
-border-radius:18px;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+flex-wrap:wrap;
 }
-
+.logo-section{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+@keyframes float{
+0%{ transform:translateY(0); }
+50%{ transform:translateY(-6px); }
+100%{ transform:translateY(0); }
+}
 .logo{
-font-size:34px;
-font-weight:800;
-color:#ffd700;
-text-shadow:0 0 15px rgba(255,215,0,0.6);
-animation:glowText 3s infinite alternate;
-}
-
-@keyframes glowText{
-from{ text-shadow:0 0 10px #ffd700; }
-to{ text-shadow:0 0 25px #ffea70; }
-}
-
-.sub-logo{
-color:#ffcc00;
-font-size:18px;
-font-weight:600;
-}
-
-.tagline{
-color:#aaa;
-font-size:14px;
-}
-
-/* CONTACT */
-.contact a{
-color:#ffd700;
-text-decoration:none;
+font-size:32px;
 font-weight:700;
+animation:float 3s ease-in-out infinite;
+}
+.sub-logo{
+font-size:20px;
+color:#38bdf8;
+font-weight:500;
+animation:float 3.2s ease-in-out infinite;
+}
+.tagline{
+font-size:16px;
+color:#a1a1aa;
+animation:float 3.4s ease-in-out infinite;
+}
+.contact a{
+color:white;
+text-decoration:none;
+font-weight:600;
 display:flex;
 align-items:center;
 gap:8px;
+margin-top:10px;
 }
-
-/* BUTTONS */
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-top:25px;
-}
-
-.btn{
-padding:12px 26px;
-border-radius:999px;
+.back-btn{
+margin-top:20px;
+padding:10px 25px;
+border-radius:30px;
 text-decoration:none;
-font-weight:700;
+font-weight:600;
 font-size:14px;
-color:#000;
-background:linear-gradient(45deg,#ffd700,#ffb300);
-box-shadow:0 0 15px rgba(255,215,0,0.4);
-transition:.3s;
+transition:all .35s ease;
+background:#38bdf8;
+color:white;
+display:inline-block;
+}
+.back-btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(56,189,248,.4);
 }
 
-.btn:hover{
-transform:translateY(-5px) scale(1.05);
-box-shadow:0 0 25px rgba(255,215,0,0.8);
+/* ===== Grid المربعات ===== */
+.package-container{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:50px; 
 }
-
-/* SECTION TITLE */
-.section-title{
-margin-top:60px;
-margin-bottom:20px;
-font-size:28px;
-font-weight:800;
-color:#ffd700;
-text-shadow:0 0 10px rgba(255,215,0,0.5);
+.package-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:15px;
+color:#38bdf8;
 }
-
-/* GRID */
 .package-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
 gap:25px;
 justify-items:center;
 }
-
-/* ANIME CARDS */
-.box,
-.tall-box,
-.banner-box{
-background:rgba(0,0,0,0.6);
-border:1px solid rgba(255,215,0,0.25);
-border-radius:16px;
-overflow:hidden;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 0 20px rgba(0,0,0,0.6);
-position:relative;
-}
-
-.box::after,
-.tall-box::after,
-.banner-box::after{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,215,0,0.15),transparent);
-transition:.6s;
-}
-
-.box:hover::after,
-.tall-box:hover::after,
-.banner-box:hover::after{
-left:100%;
-}
-
 .box{
 width:200px;
 height:200px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
 }
-
 .tall-box{
 width:200px;
 height:300px;
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
 }
-
 .banner-box{
 width:100%;
-height:220px;
-grid-column:1 / -1;
+height:220px; 
+background:#151515;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #222;
+cursor:pointer;
+transition:.35s;
+grid-column:span 2; 
 }
-
 .box:hover,
 .tall-box:hover,
 .banner-box:hover{
-transform:translateY(-8px) scale(1.04);
-border-color:#ffd700;
-box-shadow:0 0 30px rgba(255,215,0,0.5);
+transform:translateY(-10px);
+border:1px solid #444;
+box-shadow:0 20px 30px rgba(0,0,0,.7);
 }
-
-/* IMAGES */
 .box img,
 .tall-box img,
 .banner-box img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:contrast(1.1) saturate(1.2);
 }
 
-/* LIGHTBOX */
+/* zoom */
 #lightbox{
 position:fixed;
-inset:0;
-background:rgba(0,0,0,0.95);
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.96);
 display:none;
 align-items:center;
 justify-content:center;
 z-index:999;
-backdrop-filter:blur(8px);
 }
-
 #lightbox img{
 max-width:90%;
 max-height:90%;
-border:2px solid #ffd700;
-border-radius:12px;
-box-shadow:0 0 30px rgba(255,215,0,0.4);
-}
-
-/* RESPONSIVE */
-@media(max-width:600px){
-body{padding:20px;}
-.logo{font-size:26px;}
-
-.package-grid{
-grid-template-columns:1fr;
-}
-
-.box,
-.tall-box{
-width:100%;
-max-width:320px;
-}
 }
 </style>
 </head>
-
 <body>
 
 <div class="header">
-<div>
+<div class="logo-section">
 <div class="logo">deklonio</div>
-<div class="sub-logo">anime studio</div>
-<div class="tagline">Golden creative designer</div>
+<div class="sub-logo">website</div>
+<div class="tagline">The best designer</div>
 </div>
 
 <div class="contact">
-<a href="https://wa.me/201037011985">
-<i class="fa-brands fa-whatsapp"></i> Contact
+<a href="https://wa.me/201037011985" target="_blank">
+<i class="fa-brands fa-whatsapp" style="color:white;"></i> +201037011985
 </a>
 </div>
 </div>
 
-<div class="buttons">
-<a class="btn" href="#logos">Logos</a>
-<a class="btn" href="#banners">Banners</a>
-<a class="btn" href="packages.html">Packages</a>
-<a class="btn" href="#prices">Prices</a>
-</div>
+<a href="index.html" class="back-btn">Back</a>
 
-<div id="logos" class="section-title">Logos</div>
+<div class="package-container">
+
+<!-- Package 1 -->
+<div class="package-title">Package 1</div>
 <div class="package-grid">
-<div class="box"><img src="logo1.png"></div>
-<div class="box"><img src="logo2.png"></div>
-<div class="box"><img src="logo3.png"></div>
-<div class="box"><img src="logo4.png"></div>
-<div class="box"><img src="logo5.png"></div>
-<div class="box"><img src="logo6.png"></div>
-<div class="box"><img src="logo7.png"></div>
-<div class="box"><img src="logo8.png"></div>
-<div class="box"><img src="logo9.png"></div>
-<div class="box"><img src="logo10.png"></div>
-<div class="box"><img src="logo11.png"></div>
-<div class="box"><img src="logo12.png"></div>
+<div class="box"><img src="p1_1.png" alt=""></div>
+<div class="box"><img src="p1_2.png" alt=""></div>
+<div class="box"><img src="p1_3.png" alt=""></div>
+<div class="box"><img src="p1_4.png" alt=""></div>
+<div class="tall-box"><img src="p1_5.png" alt=""></div>
+<div class="tall-box"><img src="p1_6.png" alt=""></div>
+<div class="banner-box"><img src="p1_banner.png" alt=""></div>
 </div>
 
-<div id="banners" class="section-title">Banners</div>
+<!-- Package 2 -->
+<div class="package-title">Package 2</div>
 <div class="package-grid">
-<div class="banner-box"><img src="banner1.png"></div>
-<div class="banner-box"><img src="banner2.png"></div>
-<div class="banner-box"><img src="banner3.png"></div>
-<div class="banner-box"><img src="banner4.png"></div>
-<div class="banner-box"><img src="banner5.png"></div>
+<div class="box"><img src="p2_1.png" alt=""></div>
+<div class="box"><img src="p2_2.png" alt=""></div>
+<div class="box"><img src="p2_3.png" alt=""></div>
+<div class="box"><img src="p2_4.png" alt=""></div>
+<div class="banner-box"><img src="p2_banner.png" alt=""></div>
 </div>
 
-<div id="prices" class="section-title">Price Lists</div>
+<!-- Package 3 -->
+<div class="package-title">Package 3</div>
 <div class="package-grid">
-<div class="box"><img src="price1.png"></div>
-<div class="box"><img src="price2.png"></div>
-<div class="box"><img src="price3.png"></div>
-<div class="box"><img src="price4.png"></div>
-<div class="box"><img src="price5.png"></div>
+<div class="box"><img src="p3_1.png" alt=""></div>
+<div class="box"><img src="p3_2.png" alt=""></div>
+<div class="box"><img src="p3_3.png" alt=""></div>
+<div class="box"><img src="p3_4.png" alt=""></div>
+<div class="box"><img src="p3_5.png" alt=""></div>
+<div class="banner-box"><img src="p3_6.png" alt=""></div> <!-- تم تعديلها لتصبح بنر -->
+<div class="banner-box"><img src="p3_banner.png" alt=""></div>
 </div>
 
-<!-- LIGHTBOX -->
+<!-- Package 4 -->
+<div class="package-title">Package 4</div>
+<div class="package-grid">
+<div class="box"><img src="p4_1.png" alt=""></div>
+<div class="box"><img src="p4_2.png" alt=""></div>
+<div class="box"><img src="p4_3.png" alt=""></div>
+<div class="banner-box"><img src="p4_banner.png" alt=""></div>
+</div>
+
+<!-- Package 5 -->
+<div class="package-title">Package 5</div>
+<div class="package-grid">
+<div class="box"><img src="p5_1.png" alt=""></div>
+<div class="box"><img src="p5_2.png" alt=""></div>
+<div class="box"><img src="p5_3.png" alt=""></div>
+<div class="banner-box"><img src="p5_banner.png" alt=""></div>
+</div>
+
+</div>
+
+<!-- zoom -->
 <div id="lightbox">
 <img src="">
 </div>
 
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightImg = lightbox.querySelector("img");
-
+const lightbox = document.getElementById("lightbox")
+const lightImg = lightbox.querySelector("img")
 document.querySelectorAll(".package-grid img").forEach(img=>{
-img.onclick=()=>{
-lightImg.src=img.src;
-lightbox.style.display="flex";
+img.onclick = ()=>{
+lightbox.style.display = "flex"
+lightImg.src = img.src
 }
-});
-
-lightbox.onclick=()=>{
-lightbox.style.display="none";
+})
+lightbox.onclick = ()=>{
+lightbox.style.display = "none"
 }
 </script>
 
 </body>
-</html>
+  </html>
