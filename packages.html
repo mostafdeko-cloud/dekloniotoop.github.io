@@ -6,9 +6,15 @@
 <title>deklonio Packages</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 padding:40px;
@@ -16,39 +22,45 @@ font-family:'Poppins',sans-serif;
 background:#0a0a0a;
 color:white;
 }
+
+/* HEADER */
 .header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:40px;
 flex-wrap:wrap;
+margin-bottom:40px;
 }
+
 .logo-section{
 display:flex;
 flex-direction:column;
 gap:5px;
 }
+
 @keyframes float{
-0%{ transform:translateY(0); }
-50%{ transform:translateY(-6px); }
-100%{ transform:translateY(0); }
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
 }
+
 .logo{
 font-size:32px;
 font-weight:700;
 animation:float 3s ease-in-out infinite;
 }
+
 .sub-logo{
 font-size:20px;
 color:#38bdf8;
-font-weight:500;
-animation:float 3.2s ease-in-out infinite;
 }
+
 .tagline{
-font-size:16px;
+font-size:14px;
 color:#a1a1aa;
-animation:float 3.4s ease-in-out infinite;
 }
+
+/* CONTACT */
 .contact a{
 color:white;
 text-decoration:none;
@@ -58,80 +70,94 @@ align-items:center;
 gap:8px;
 margin-top:10px;
 }
+
+/* BACK BUTTON */
 .back-btn{
 margin-top:20px;
-padding:10px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-transition:all .35s ease;
+display:inline-block;
+padding:10px 22px;
+border-radius:999px;
 background:#38bdf8;
 color:white;
-display:inline-block;
-}
-.back-btn:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 20px rgba(56,189,248,.4);
+text-decoration:none;
+font-weight:600;
+transition:.3s;
 }
 
-/* ===== Grid المربعات ===== */
+.back-btn:hover{
+transform:translateY(-4px) scale(1.05);
+}
+
+/* SECTIONS */
 .package-container{
-margin-top:30px;
+margin-top:40px;
 display:flex;
 flex-direction:column;
-gap:50px; 
+gap:60px;
 }
+
 .package-title{
-font-size:22px;
-font-weight:600;
-margin-bottom:15px;
+font-size:26px;
+font-weight:700;
 color:#38bdf8;
+margin-bottom:15px;
 }
+
+/* GRID */
 .package-grid{
 display:grid;
-grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
 gap:25px;
 justify-items:center;
 }
+
 .box{
 width:200px;
 height:200px;
-background:#151515;
 border-radius:16px;
 overflow:hidden;
-border:1px solid #222;
 cursor:pointer;
 transition:.35s;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
 }
+
 .tall-box{
 width:200px;
 height:300px;
-background:#151515;
 border-radius:16px;
 overflow:hidden;
-border:1px solid #222;
 cursor:pointer;
 transition:.35s;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
 }
+
 .banner-box{
 width:100%;
-height:220px; 
-background:#151515;
+height:220px;
 border-radius:16px;
 overflow:hidden;
-border:1px solid #222;
 cursor:pointer;
 transition:.35s;
-grid-column:span 2; 
+grid-column:1 / -1;
+border:1px solid rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
 }
+
+/* HOVER */
 .box:hover,
 .tall-box:hover,
 .banner-box:hover{
-transform:translateY(-10px);
-border:1px solid #444;
-box-shadow:0 20px 30px rgba(0,0,0,.7);
+transform:translateY(-8px) scale(1.02);
+border:1px solid rgba(56,189,248,0.5);
+box-shadow:0 20px 40px rgba(0,0,0,.6);
 }
+
+/* IMAGES */
 .box img,
 .tall-box img,
 .banner-box img{
@@ -140,25 +166,58 @@ height:100%;
 object-fit:cover;
 }
 
-/* zoom */
+/* LIGHTBOX */
 #lightbox{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.96);
-display:none;
+inset:0;
+background:rgba(0,0,0,0.92);
+display:flex;
 align-items:center;
 justify-content:center;
+opacity:0;
+visibility:hidden;
+transition:.25s;
 z-index:999;
 }
+
+#lightbox.show{
+opacity:1;
+visibility:visible;
+}
+
 #lightbox img{
 max-width:90%;
 max-height:90%;
+border-radius:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+body{
+padding:20px;
+}
+
+.logo{font-size:26px;}
+.sub-logo{font-size:18px;}
+
+.package-grid{
+grid-template-columns:1fr;
+}
+
+.box,
+.tall-box{
+width:100%;
+max-width:320px;
+}
+
+.banner-box{
+grid-column:1 / -1;
+}
 }
 </style>
 </head>
+
 <body>
 
 <div class="header">
@@ -170,7 +229,7 @@ max-height:90%;
 
 <div class="contact">
 <a href="https://wa.me/201037011985" target="_blank">
-<i class="fa-brands fa-whatsapp" style="color:white;"></i> +201037011985
+<i class="fa-brands fa-whatsapp"></i> +201037011985
 </a>
 </div>
 </div>
@@ -180,76 +239,94 @@ max-height:90%;
 <div class="package-container">
 
 <!-- Package 1 -->
+<div>
 <div class="package-title">Package 1</div>
 <div class="package-grid">
-<div class="box"><img src="p1_1.png" alt=""></div>
-<div class="box"><img src="p1_2.png" alt=""></div>
-<div class="box"><img src="p1_3.png" alt=""></div>
-<div class="box"><img src="p1_4.png" alt=""></div>
-<div class="tall-box"><img src="p1_5.png" alt=""></div>
-<div class="tall-box"><img src="p1_6.png" alt=""></div>
-<div class="banner-box"><img src="p1_banner.png" alt=""></div>
+<div class="box"><img src="p1_1.png"></div>
+<div class="box"><img src="p1_2.png"></div>
+<div class="box"><img src="p1_3.png"></div>
+<div class="box"><img src="p1_4.png"></div>
+<div class="tall-box"><img src="p1_5.png"></div>
+<div class="tall-box"><img src="p1_6.png"></div>
+<div class="banner-box"><img src="p1_banner.png"></div>
+</div>
 </div>
 
 <!-- Package 2 -->
+<div>
 <div class="package-title">Package 2</div>
 <div class="package-grid">
-<div class="box"><img src="p2_1.png" alt=""></div>
-<div class="box"><img src="p2_2.png" alt=""></div>
-<div class="box"><img src="p2_3.png" alt=""></div>
-<div class="box"><img src="p2_4.png" alt=""></div>
-<div class="banner-box"><img src="p2_banner.png" alt=""></div>
+<div class="box"><img src="p2_1.png"></div>
+<div class="box"><img src="p2_2.png"></div>
+<div class="box"><img src="p2_3.png"></div>
+<div class="box"><img src="p2_4.png"></div>
+<div class="banner-box"><img src="p2_banner.png"></div>
+</div>
 </div>
 
 <!-- Package 3 -->
+<div>
 <div class="package-title">Package 3</div>
 <div class="package-grid">
-<div class="box"><img src="p3_1.png" alt=""></div>
-<div class="box"><img src="p3_2.png" alt=""></div>
-<div class="box"><img src="p3_3.png" alt=""></div>
-<div class="box"><img src="p3_4.png" alt=""></div>
-<div class="box"><img src="p3_5.png" alt=""></div>
-<div class="banner-box"><img src="p3_6.png" alt=""></div> <!-- تم تعديلها لتصبح بنر -->
-<div class="banner-box"><img src="p3_banner.png" alt=""></div>
+<div class="box"><img src="p3_1.png"></div>
+<div class="box"><img src="p3_2.png"></div>
+<div class="box"><img src="p3_3.png"></div>
+<div class="box"><img src="p3_4.png"></div>
+<div class="box"><img src="p3_5.png"></div>
+<div class="banner-box"><img src="p3_6.png"></div>
+<div class="banner-box"><img src="p3_banner.png"></div>
+</div>
 </div>
 
 <!-- Package 4 -->
+<div>
 <div class="package-title">Package 4</div>
 <div class="package-grid">
-<div class="box"><img src="p4_1.png" alt=""></div>
-<div class="box"><img src="p4_2.png" alt=""></div>
-<div class="box"><img src="p4_3.png" alt=""></div>
-<div class="banner-box"><img src="p4_banner.png" alt=""></div>
+<div class="box"><img src="p4_1.png"></div>
+<div class="box"><img src="p4_2.png"></div>
+<div class="box"><img src="p4_3.png"></div>
+<div class="banner-box"><img src="p4_banner.png"></div>
+</div>
 </div>
 
 <!-- Package 5 -->
+<div>
 <div class="package-title">Package 5</div>
 <div class="package-grid">
-<div class="box"><img src="p5_1.png" alt=""></div>
-<div class="box"><img src="p5_2.png" alt=""></div>
-<div class="box"><img src="p5_3.png" alt=""></div>
-<div class="banner-box"><img src="p5_banner.png" alt=""></div>
+<div class="box"><img src="p5_1.png"></div>
+<div class="box"><img src="p5_2.png"></div>
+<div class="box"><img src="p5_3.png"></div>
+<div class="banner-box"><img src="p5_banner.png"></div>
+</div>
 </div>
 
 </div>
 
-<!-- zoom -->
+<!-- LIGHTBOX -->
 <div id="lightbox">
 <img src="">
 </div>
 
 <script>
-const lightbox = document.getElementById("lightbox")
-const lightImg = lightbox.querySelector("img")
+const lightbox=document.getElementById("lightbox");
+const lightImg=lightbox.querySelector("img");
+
 document.querySelectorAll(".package-grid img").forEach(img=>{
-img.onclick = ()=>{
-lightbox.style.display = "flex"
-lightImg.src = img.src
+img.addEventListener("click",()=>{
+lightImg.src=img.src;
+lightbox.classList.add("show");
+});
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.classList.remove("show");
+});
+
+document.addEventListener("keydown",(e)=>{
+if(e.key==="Escape"){
+lightbox.classList.remove("show");
 }
-})
-lightbox.onclick = ()=>{
-lightbox.style.display = "none"
-}
+});
 </script>
 
 </body>
